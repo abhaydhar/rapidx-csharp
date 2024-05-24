@@ -11,7 +11,9 @@ class DatabaseOperations
         ReadEmployees();
         ReadDepartment(2); // Example: Read department with ID 2
         InsertLog("Sample log entry.");
+		double premium =0.0;
 		
+		premium = (sum_assured * present_value_future_benefits) / present_value_annuity;
 		double number = 25.0;
             double squareRoot = Math.Sqrt(number);
             Console.WriteLine($"Square root of {number} is {squareRoot}");
@@ -24,6 +26,13 @@ class DatabaseOperations
             Console.WriteLine($"For an angle of {angle} radians:");
             Console.WriteLine($"Sine: {sine}, Cosine: {cosine}, Tangent: {tangent}");
     }
+	
+	static void CalculatePremium(double sum_assured, double present_value_future_benefits, double present_value_annuity)
+	{
+		double premium =0.0;
+		
+		premium = (sum_assured * present_value_future_benefits) / present_value_annuity;
+	}
 
     static void ReadEmployees()
     {
