@@ -1,0 +1,13 @@
+2017-04-18 12:52:27 => UserID : 34501 ; Message : UserEnroll :: Login ; TrStatus : Started ; SessionId : vjixf0c5r4xyndlopr0g5s2h ; 
+2017-04-18 12:52:28 => UserID : 34501 ; Message : UserEnroll :: Login ; TrStatus : Valid login ; SessionId : vjixf0c5r4xyndlopr0g5s2h ; 
+2017-04-18 12:52:28 => UserID : 34501 ; Message : UserEnroll :: Register_User_Info ; TrStatus : Page load ; SessionId : vjixf0c5r4xyndlopr0g5s2h ; 
+2017-04-18 12:54:18 => UserID : 34501 ; Message : UserEnroll :: Register_User_Info ; TrStatus : Page load ; SessionId : vjixf0c5r4xyndlopr0g5s2h ; 
+2017-04-18 12:55:18 => UserID : 34501 ; Message : UserEnroll :: Register_User_Info ; TrStatus : Sending OTP - Failure ; SessionId : vjixf0c5r4xyndlopr0g5s2h ; 
+2017-04-18 12:55:18 => UserID : 34501 ; Message : UserEnroll :: Register_User_Info ; TrStatus : Page load ; SessionId : vjixf0c5r4xyndlopr0g5s2h ; 
+2017-04-18 12:56:39 => UserID : 34501 ; Message : UserEnroll :: Register_User_Info ; TrStatus : OTP sent , now redirecting to RegisterUserInformation ; SessionId : vjixf0c5r4xyndlopr0g5s2h ; 
+2017-04-18 12:56:42 => UserID : 34501 ; Message : UserEnroll :: Register_User_Info ; TrStatus : Page load ; SessionId : vjixf0c5r4xyndlopr0g5s2h ; 
+2017-04-18 12:57:27 => UserID : 34501 ; Message : UserEnroll :: Register_User_Info ; TrStatus : Submit - Validate user otp ; SessionId : vjixf0c5r4xyndlopr0g5s2h ; 
+2017-04-18 12:57:32 => UserID : 34501 ; Message : UserEnroll :: Register_User_Info ; TrStatus : valid OTP, now redirecting to reset password ; SessionId : vjixf0c5r4xyndlopr0g5s2h ; 
+2017-04-18 12:57:49 => UserID : 34501 ; Message : UserEnroll :: Register_User_Info ; TrStatus : User mobile number updated in AD ; SessionId : vjixf0c5r4xyndlopr0g5s2h ; 
+2017-04-18 12:57:53 => UserID : 34501 ; Message : UserEnroll :: Register_User_Info ; TrStatus : Page load ; SessionId : vjixf0c5r4xyndlopr0g5s2h ; 
+2017-04-18 12:59:01 => UserID : 34501 ; Message : UserEnroll :: Register_User_Info ; TrStatus : Page load ; SessionId : vjixf0c5r4xyndlopr0g5s2h ; 

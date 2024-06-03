@@ -1,0 +1,6 @@
+2017-03-30 05:02:27 => UserID : 34501 ; Message : UserEnroll :: Login ; TrStatus : Started ; SessionId : 2pdf0yuvk3kmoonipovuzzwk ; 
+2017-03-30 05:02:27 => UserID : 34501 ; Message : UserEnroll :: Login ; TrStatus : InValid login ; SessionId : 2pdf0yuvk3kmoonipovuzzwk ; 
+2017-03-30 05:02:28 => UserID : 34501 ; Message : UserEnroll :: Login ; TrStatus : Account not locked ; SessionId : 2pdf0yuvk3kmoonipovuzzwk ; 
+2017-03-30 05:02:33 => UserID : 34501 ; Message : UserEnroll :: Login ; TrStatus : Started ; SessionId : 2pdf0yuvk3kmoonipovuzzwk ; 
+2017-03-30 05:02:33 => UserID : 34501 ; Message : UserEnroll :: Login ; TrStatus : Valid login ; SessionId : 2pdf0yuvk3kmoonipovuzzwk ; 
+2017-03-30 05:02:33 => UserID : 34501 ; Message : UserEnroll :: Register_User_Info ; TrStatus : Page load ; SessionId : 2pdf0yuvk3kmoonipovuzzwk ; 

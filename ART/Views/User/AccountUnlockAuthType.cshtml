@@ -1,0 +1,87 @@
+﻿@{
+    ViewBag.Title = "ART :: " + Art.UnlockAccount;
+    Layout = "~/Views/LayoutMaster/_Layout1.cshtml";
+}
+
+<div class="col-sm-12 col-md-12 col-lg-12 page-title text-center">
+    <img src="~/Images/ArtImages/acc-unlock.svg" alt="forgot-password">
+    <span>@Art.UnlockAccount</span>
+
+</div>
+
+<div class="col-sm-12 col-md-12 col-lg-12 form-box Padding-Nil" id="dvUnlockAccAuthType" style="display:none">
+    <ul class="progressbar">
+        <li class="active">@Art.UserID</li>
+        <li class="current">@Art.AuthenticationType</li>
+        <li>@Art.UnlockAccount</li>
+    </ul>
+    <div class="form-container row text-center padding-T30">
+        <!-- OTP section  start-->
+        <div class="col-sm-12 col-md-6 col-lg-6">
+            <div class="col-sm-12 col-md-12 col-lg-12 padding-vertical" id="dvOtpMain">
+                <form action="/User/AccountUnlockAuthOTP" method="post" id="otp-form">
+                    @Html.AntiForgeryToken()
+                    <span id="radiobtn-OTP" class="radio-checked"></span><label class="radio-label">@Art.OTP</label>
+                    <div class="col-sm-12 col-md-12 col-lg-12 auth-grp auth-grp-open" id="section-otp">
+                        <span class="color-grey Font-12">@Art.OTP_Caption @ViewBag.MobileNumber</span>
+                        <button class="submit-btn Margin-Nil" type="submit">@Art.Send</button>
+
+                    </div>
+                    <label id="lblMessage" class="error">@ViewBag.Message</label>
+                </form>
+            </div>
+
+        </div>
+        <!-- OTP section  end-->
+        <!-- Security Questions section  start-->
+        <div class="col-sm-12 col-md-6 col-lg-6">
+            <div class="col-sm-12 col-md-12 col-lg-12 padding-vertical">
+                <form action="/User/AccountUnlockAuthSecQue" method="post" id="">
+                    @Html.AntiForgeryToken()
+                    <span id="radiobtn-security" class=""></span><label class="radio-label">@Art.SecurityQuestion</label>
+                    <div class="col-sm-12 col-md-12 col-lg-12 auth-grp" id="section-security">
+                        <span class="color-grey Font-12">@Art.SecQue_Caption</span>
+                        <button class="submit-btn Margin-Nil" type="submit">@Art.Next</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+ 
+<div class="modal fade" id="modal-locksource" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content width-size">
+            <div class="modal-header text-center ">
+                <h4>Account locked out details</h4> 
+                @*<img src="~/Images/ArtImages/success-msg-tick.png">*@
+            </div>
+            <div class="modal-body Padding-Nil">
+                <div class="form-container row Padding-Nil" id="dvLockingSource">
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <a class="submit-btn" data-dismiss="modal">OK</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/ARTScript/AccountUnlockAuthType.js?v=@JSVersion.version"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        accountUnlockAuthType.defaults.otpDisableMsg = '@Art.OTPDisableMsg';
+        accountUnlockAuthType.defaults.defaultLang = '@Html.Raw(ViewBag.DefaultLang)';
+        accountUnlockAuthType.defaults.isOtpEnabled = '@Html.Raw(ViewBag.IsOtpEnabled)';
+        accountUnlockAuthType.defaults.IsOtpAttemptExceed = '@ViewBag.IsOtpAttemptExceed';
+        accountUnlockAuthType.defaults.OTPMaxAttemptMsg = '@Art.OTPMaxAttemptMsg';
+        accountUnlockAuthType.defaults.isEventSourceLink ='@Html.Raw(ViewBag.isUserEventSourceLink)';
+        accountUnlockAuthType.init();
+    });
+</script>
+

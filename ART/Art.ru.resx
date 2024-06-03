@@ -1,0 +1,459 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Cancel" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="ChangeOTPPassword" xml:space="preserve">
+    <value>Изменение / OTP пароля</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Изменить пароль</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Подтвердите Пароль</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>новый пароль</value>
+  </data>
+  <data name="OldPassword" xml:space="preserve">
+    <value>Старый пароль</value>
+  </data>
+  <data name="OTP" xml:space="preserve">
+    <value>OTP</value>
+  </data>
+  <data name="PleaseEnterImageText" xml:space="preserve">
+    <value>Пожалуйста, введите текст изображения</value>
+  </data>
+  <data name="ResetYourPassword" xml:space="preserve">
+    <value>Сбросить пароль</value>
+  </data>
+  <data name="UserID" xml:space="preserve">
+    <value>Идентификатор пользователя</value>
+  </data>
+  <data name="UniqueQuestionValidation" xml:space="preserve">
+    <value>вопросы должны быть уникальными</value>
+  </data>
+  <data name="ValidateAnswer" xml:space="preserve">
+    <value>Пожалуйста, ответьте на вопрос</value>
+  </data>
+  <data name="accountunlock_home" xml:space="preserve">
+    <value>счет разблокировки</value>
+  </data>
+  <data name="changeotppassword_home" xml:space="preserve">
+    <value>Изменение / OTP пароля</value>
+  </data>
+  <data name="resetpasswrod_home" xml:space="preserve">
+    <value>Сброс пароля</value>
+  </data>
+  <data name="userenrollupdate_home" xml:space="preserve">
+    <value>Пользователь Регистрация / обновление</value>
+  </data>
+  <data name="Change" xml:space="preserve">
+    <value>+ Изменить</value>
+  </data>
+  <data name="ChangepasswordCaption" xml:space="preserve">
+    <value>Для того чтобы принять изменения, пожалуйста, заполните приведенную ниже информацию</value>
+  </data>
+  <data name="CurPassMin6Char" xml:space="preserve">
+    <value>Текущий пароль должен иметь минимум 6 символов</value>
+  </data>
+  <data name="CurrentPassword" xml:space="preserve">
+    <value>текущий пароль</value>
+  </data>
+  <data name="EnterCaptchaImageText" xml:space="preserve">
+    <value>Пожалуйста, введите текст в изображение</value>
+  </data>
+  <data name="EnterCurrentPassword" xml:space="preserve">
+    <value>Пожалуйста, введите текущий пароль</value>
+  </data>
+  <data name="EnterNewPassword" xml:space="preserve">
+    <value>Пожалуйста введите новый пароль</value>
+  </data>
+  <data name="EnterOTP" xml:space="preserve">
+    <value>Пожалуйста, введите полученный одноразовый пароль</value>
+  </data>
+  <data name="InvalidCaptcha" xml:space="preserve">
+    <value>Invalid Captcha</value>
+  </data>
+  <data name="InvalidOTP" xml:space="preserve">
+    <value>Invalid OTP</value>
+  </data>
+  <data name="InvalidPassword" xml:space="preserve">
+    <value>Неверный пароль</value>
+  </data>
+  <data name="InvalidUser" xml:space="preserve">
+    <value>Недействительный пользователь</value>
+  </data>
+  <data name="Max13Char" xml:space="preserve">
+    <value>Только максимум 13 символов</value>
+  </data>
+  <data name="Min6Char" xml:space="preserve">
+    <value>не менее 6 символов</value>
+  </data>
+  <data name="Min9Char" xml:space="preserve">
+    <value>Минимальная длина 9 символов</value>
+  </data>
+  <data name="MissingUserID" xml:space="preserve">
+    <value>Отсутствующий ID пользователя</value>
+  </data>
+  <data name="OTPMin6Char" xml:space="preserve">
+    <value>ОТП должны иметь минимум 6 символов</value>
+  </data>
+  <data name="PasswordLength" xml:space="preserve">
+    <value>Пароль должен быть 9-13 символов в длину</value>
+  </data>
+  <data name="PasswordMismatch" xml:space="preserve">
+    <value>Пароли Несовпадение</value>
+  </data>
+  <data name="PasswordPolicy" xml:space="preserve">
+    <value>Пароль должен содержать одну маленькую, одну заглавную один символ и один цифровых символов</value>
+  </data>
+  <data name="ReenterPassword" xml:space="preserve">
+    <value>Повторно введите новый пароль</value>
+  </data>
+  <data name="ForgotPassword" xml:space="preserve">
+    <value>Забыли пароль</value>
+  </data>
+  <data name="AccountNotLocked" xml:space="preserve">
+    <value>Ваш аккаунт не заблокирован</value>
+  </data>
+  <data name="answer" xml:space="preserve">
+    <value>ответ</value>
+  </data>
+  <data name="Continue" xml:space="preserve">
+    <value>Продолжать</value>
+  </data>
+  <data name="EmptyAnswerwError" xml:space="preserve">
+    <value>Пожалуйста, введите Ваш ответ</value>
+  </data>
+  <data name="EnterUserId" xml:space="preserve">
+    <value>Пожалуйста, введите свой идентификатор пользователя</value>
+  </data>
+  <data name="question" xml:space="preserve">
+    <value>вопрос</value>
+  </data>
+  <data name="QuestionAnswerWrong" xml:space="preserve">
+    <value>ваш вопрос неправильный ответ</value>
+  </data>
+  <data name="unlock" xml:space="preserve">
+    <value>отпереть</value>
+  </data>
+  <data name="UnlockAccount" xml:space="preserve">
+    <value>Разблокировать учетную запись</value>
+  </data>
+  <data name="UnlockFailure" xml:space="preserve">
+    <value>Проблема в то время как разблокировать свой аккаунт, пожалуйста, попробуйте через какое-то время</value>
+  </data>
+  <data name="UnlockSuccess" xml:space="preserve">
+    <value>Ваш счет разблокирован успешно</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>Отправить</value>
+  </data>
+  <data name="AllQuestionAnswerMandateError" xml:space="preserve">
+    <value>Все вопросы должны быть ответ</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>пароль</value>
+  </data>
+  <data name="UserLogin" xml:space="preserve">
+    <value>Логин пользователя</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>имя пользователя</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Авторизоваться</value>
+  </data>
+  <data name="DOB" xml:space="preserve">
+    <value>Дата рождения</value>
+  </data>
+  <data name="MobileNumber" xml:space="preserve">
+    <value>Мобильный номер</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Обновить</value>
+  </data>
+  <data name="AccountRecoveryTool" xml:space="preserve">
+    <value>СЧЕТ ВОССТАНОВЛЕНИЯ ИНСТРУМЕНТ</value>
+  </data>
+  <data name="ArtCaption" xml:space="preserve">
+    <value>мета-данные здесь идет ...</value>
+  </data>
+  <data name="AnswerWrongErrMsg" xml:space="preserve">
+    <value>ваш ответ неправильный, пожалуйста, попробуйте еще раз</value>
+  </data>
+  <data name="InvalidUserNamePassword" xml:space="preserve">
+    <value>Неверное имя пользователя / пароль</value>
+  </data>
+  <data name="PasswordResetSuccess" xml:space="preserve">
+    <value>Восстановление пароля успешно !!!</value>
+  </data>
+  <data name="RegisterFailure" xml:space="preserve">
+    <value>Проблема во время регистрации, пожалуйста, попробуйте через какое-то время</value>
+  </data>
+  <data name="RegisterSuccess" xml:space="preserve">
+    <value>Пользователь вопрос ответ успешно сохранен !!!</value>
+  </data>
+  <data name="SomethingWentWrong" xml:space="preserve">
+    <value>Что-то пошло не так, пожалуйста, попробуйте через какое-то время</value>
+  </data>
+  <data name="UserNameNotExist" xml:space="preserve">
+    <value>Имя пользователя не существует</value>
+  </data>
+  <data name="UserIdNotExist" xml:space="preserve">
+    <value>Идентификатор пользователя не существует</value>
+  </data>
+  <data name="EnterPassword" xml:space="preserve">
+    <value>Пожалуйста введите пароль</value>
+  </data>
+  <data name="EnterUserName" xml:space="preserve">
+    <value>Пожалуйста, введите имя пользователя</value>
+  </data>
+  <data name="UserNotRegistered" xml:space="preserve">
+    <value>Пожалуйста, зарегистрируйтесь, и продолжить</value>
+  </data>
+  <data name="SecurityQuestion" xml:space="preserve">
+    <value>Контрольный вопрос</value>
+  </data>
+  <data name="Authenticate" xml:space="preserve">
+    <value>проверять подлинность</value>
+  </data>
+  <data name="AuthenticationType" xml:space="preserve">
+    <value>Тип аутентификации</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>следующий</value>
+  </data>
+  <data name="OTP_Caption" xml:space="preserve">
+    <value>ОТП будет отправлено</value>
+  </data>
+  <data name="SecQue_Caption" xml:space="preserve">
+    <value>Переведет вас на вопросник страницу</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>послать</value>
+  </data>
+  <data name="AccountIsLocked" xml:space="preserve">
+    <value>Ваш аккаунт заблокирован</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>подтверждение</value>
+  </data>
+  <data name="Questionnaire" xml:space="preserve">
+    <value>Вопросов</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>РЕГИСТР</value>
+  </data>
+  <data name="Enter_OTP" xml:space="preserve">
+    <value>Введите одноразовый пароль</value>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>предыдущий</value>
+  </data>
+  <data name="EnableOTP_Caption" xml:space="preserve">
+    <value>Выберите для включения проверки подлинности OTP</value>
+  </data>
+  <data name="RegisterForOTP" xml:space="preserve">
+    <value>Регистрация для OTP</value>
+  </data>
+  <data name="ChangePasswordSuccess" xml:space="preserve">
+    <value>Пароль успешно изменен</value>
+  </data>
+  <data name="EnterDOB" xml:space="preserve">
+    <value>Пожалуйста, введите Дата рождения</value>
+  </data>
+  <data name="EnterMobileNumber" xml:space="preserve">
+    <value>Пожалуйста, введите номер мобильного телефона</value>
+  </data>
+  <data name="IncorrectDOBFormat" xml:space="preserve">
+    <value>Дата рождения формат неверен</value>
+  </data>
+  <data name="InvalidDOB" xml:space="preserve">
+    <value>Неверная дата рождения</value>
+  </data>
+  <data name="ArtCopyRights" xml:space="preserve">
+    <value>Все права защищены © 2016 г. Hexaware Technologies. Все права защищены.</value>
+  </data>
+  <data name="ClickHereToUnlock" xml:space="preserve">
+    <value>Нажмите здесь, чтобы разблокировать</value>
+  </data>
+  <data name="ErrorSendMsg" xml:space="preserve">
+    <value>Ошибка при отправке сообщения</value>
+  </data>
+  <data name="InvalidMobileNumber" xml:space="preserve">
+    <value>Недействительный номер мобильного телефона</value>
+  </data>
+  <data name="AccountLockMsg" xml:space="preserve">
+    <value>Вы превысили максимальное количество попыток, ваша учетная запись будет заблокирована для</value>
+  </data>
+  <data name="Error404Msg" xml:space="preserve">
+    <value>Страница, которую вы ищете, возможно, были перемещены, его название было изменено или временно unvailable</value>
+  </data>
+  <data name="ErrorMsg" xml:space="preserve">
+    <value>Что-то пошло не так, пожалуйста, попробуйте еще раз через некоторое время</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Главная</value>
+  </data>
+  <data name="EnterReceivedOtp" xml:space="preserve">
+    <value>Пожалуйста, введите полученные OTP</value>
+  </data>
+  <data name="EnterYourPassword" xml:space="preserve">
+    <value>Введите ваш пароль</value>
+  </data>
+  <data name="EnterYourUserId" xml:space="preserve">
+    <value>Введите идентификатор пользователя</value>
+  </data>
+  <data name="EnterYourUserName" xml:space="preserve">
+    <value>Введите имя пользователя</value>
+  </data>
+  <data name="PlsConfirmNewPassword" xml:space="preserve">
+    <value>Пожалуйста, подтвердите свой новый пароль</value>
+  </data>
+  <data name="PlsConfirmPassword" xml:space="preserve">
+    <value>Пожалуйста, подтвердите свой пароль</value>
+  </data>
+  <data name="PlsEnterCaptcha" xml:space="preserve">
+    <value>Пожалуйста, введите код безопасности, показанный ниже</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Выйти</value>
+  </data>
+  <data name="OTPDisableMsg" xml:space="preserve">
+    <value>Пожалуйста, включите "Register для OTP" вариант при поступлении в школу, чтобы включить эту</value>
+  </data>
+  <data name="MinMaxMsg" xml:space="preserve">
+    <value>Min 9 - Max 13 Персонажи</value>
+  </data>
+  <data name="OneNumericChar" xml:space="preserve">
+    <value>Один цифровой символ</value>
+  </data>
+  <data name="OneSmallLetter" xml:space="preserve">
+    <value>Одно маленькое письмо</value>
+  </data>
+  <data name="OneSpecialChar" xml:space="preserve">
+    <value>Один специальный символ</value>
+  </data>
+  <data name="OneUpperCaseLetter" xml:space="preserve">
+    <value>Одна заглавная буква</value>
+  </data>
+</root>

@@ -1,0 +1,14 @@
+2017-04-20 10:58:35 => UserID : 34501 ; Message : UserEnroll :: Login ; TrStatus : Started ; SessionId : vjixf0c5r4xyndlopr0g5s2h ; 
+2017-04-20 10:58:35 => UserID : 34501 ; Message : UserEnroll :: Login ; TrStatus : InValid login ; SessionId : vjixf0c5r4xyndlopr0g5s2h ; 
+2017-04-20 10:58:36 => UserID : 34501 ; Message : UserEnroll :: Login ; TrStatus : Account not locked ; SessionId : vjixf0c5r4xyndlopr0g5s2h ; 
+2017-04-20 10:58:44 => UserID : 34501 ; Message : UserEnroll :: Login ; TrStatus : Started ; SessionId : vjixf0c5r4xyndlopr0g5s2h ; 
+2017-04-20 10:58:44 => UserID : 34501 ; Message : UserEnroll :: Login ; TrStatus : Valid login ; SessionId : vjixf0c5r4xyndlopr0g5s2h ; 
+2017-04-20 10:58:47 => UserID : 34501 ; Message : UserEnroll :: Register_User_Info ; TrStatus : Page load ; SessionId : vjixf0c5r4xyndlopr0g5s2h ; 
+2017-04-20 01:11:24 => UserID : 34501 ; Message : UserEnroll :: Login ; TrStatus : Started ; SessionId : vjixf0c5r4xyndlopr0g5s2h ; 
+2017-04-20 01:11:25 => UserID : 34501 ; Message : UserEnroll :: Login ; TrStatus : Valid login ; SessionId : vjixf0c5r4xyndlopr0g5s2h ; 
+2017-04-20 01:11:30 => UserID : 34501 ; Message : UserEnroll :: Register_User_Info ; TrStatus : Page load ; SessionId : vjixf0c5r4xyndlopr0g5s2h ; 
+2017-04-20 01:12:34 => UserID : 34501 ; Message : UserEnroll :: Register_User_Info ; TrStatus : Page load ; SessionId : vjixf0c5r4xyndlopr0g5s2h ; 
+2017-04-20 01:13:08 => UserID : 34501 ; Message : UserEnroll :: Register_User_Info ; TrStatus : Page load ; SessionId : vjixf0c5r4xyndlopr0g5s2h ; 
+2017-04-20 01:16:13 => UserID : 34501 ; Message : UserEnroll :: Login ; TrStatus : Started ; SessionId : bmtne2xp5yjy4vab1n1pizyb ; 
+2017-04-20 01:16:13 => UserID : 34501 ; Message : UserEnroll :: Login ; TrStatus : Valid login ; SessionId : bmtne2xp5yjy4vab1n1pizyb ; 
+2017-04-20 01:16:14 => UserID : 34501 ; Message : UserEnroll :: Register_User_Info ; TrStatus : Page load ; SessionId : bmtne2xp5yjy4vab1n1pizyb ; 

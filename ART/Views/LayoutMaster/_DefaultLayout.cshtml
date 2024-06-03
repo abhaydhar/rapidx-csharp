@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
+
+    <link href="~/Css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Css/custom-style.css" rel="stylesheet" />
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Css/datepicker.css" rel="stylesheet" />
+
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/ARTScript/corerest.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <header class="col-sm-12 col-md-12 col-lg-12 padding-nil">
+            <div class="containerset">
+                <div class="col-sm-4 col-md-4 col-lg-4 padding-nil">
+                    <img class="art-logo" src="~/Images/art-logo.gif" alt="art-logo">
+                </div>
+                
+
+            </div>
+        </header>
+        @RenderBody()
+    </div>
+    <footer class="col-sm-12 col-md-12 col-lg-12 padding-nil text-center">
+        <img src="~/Images/hexaware_logo.png">
+        <img src="~/Images/raise_it_logo_footer.png">
+    </footer>
+</body>
+</html>

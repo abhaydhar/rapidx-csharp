@@ -1,0 +1,104 @@
+﻿@using BotDetect.Web.Mvc;
+@model ArtHandler.Model.AccountUnlockModel
+
+@{
+    ViewBag.Title = "ART :: " + Art.UnlockAccount;
+    Layout = "~/Views/LayoutMaster/_Layout1.cshtml";
+}
+
+<div class="col-sm-12 col-md-12 col-lg-12 page-title text-center">
+    <img src="~/Images/ArtImages/acc-unlock.svg" alt="forgot-password">
+    <span>@Art.UnlockAccount</span>
+</div>
+
+
+<!-- content  section  start-->
+<form class="form-horizontal" action="/User/CheckUserAccountUnlockStatus" role="form" method="post" id="unlockaccform1-form" autocomplete="off" style="display:none">
+    @Html.AntiForgeryToken()
+    <div class="col-sm-12 col-md-12 col-lg-12 form-box">
+        @if (ArtHandler.Model.Singleton.Instance.ClientSessionID.Is_OTP_Enabled == "Y")
+        {
+            <ul class="progressbar">
+                <li class="current">@Art.UserID</li>
+                <li>@Art.AuthenticationType</li>
+                <li>@Art.UnlockAccount</li>
+            </ul>
+        }
+        else
+        {
+            <ul class="progressbar progressbar-2">
+                <li class="current">@Art.UserID</li>
+                <li>@Art.UnlockAccount</li>
+            </ul>
+        }
+
+        <!-- user id input section starts here-->
+        <div class="form-container row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="col-sm-12 col-md-6 col-lg-6">
+                    <p>@Art.UserID</p>
+                    @if (!string.IsNullOrEmpty(ViewBag.UserId))
+                    {
+                        <input type="text" class="text-box clsaplhanumeric" name="txtUserId" id="txtUserId" value="@ViewBag.UserId" >  @*data - text = "@Art.EnterYourUserId, e.g., 1234"*@
+                    }
+                    else
+                    {
+                        <input type="text" class="text-box clsaplhanumeric" name="txtUserId" id="txtUserId" />  @*data - text = "@Art.EnterYourUserId in the format: 1234"*@
+                    }
+
+                    <label id="lblMessage" for="txtUserId" class="error">@ViewBag.Message</label>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-6">
+                    <p>Captcha</p>
+                    @using (Html.BeginForm("CheckCaptcha", "Example", FormMethod.Post, new { @class = "column", role = "form" }))
+                    {
+                        <div class="actions col-lg-12 Padding-Nil" id="CaptchaSection">
+                            @*@Html.TextBox("CaptchaCode")*@
+                            <input id="CaptchaCode" class="text-box valid" autocomplete="off" name="CaptchaCode" type="text" value="" style="text-transform: uppercase;" data-text="Please enter the Captcha" maxlength="6">
+
+                        </div>
+
+                        <div id="CaptchaElement">
+                            @{ MvcCaptcha exampleCaptcha = new MvcCaptcha("ExampleCaptcha");
+                             exampleCaptcha.UserInputID = "CaptchaCode";
+                             exampleCaptcha.CodeLength = 6;
+                             exampleCaptcha.CodeStyle = BotDetect.CodeStyle.Alphanumeric;
+                             exampleCaptcha.ImageStyle = BotDetect.ImageStyle.Chipped;
+                             exampleCaptcha.CustomDarkColor = System.Drawing.Color.Black;
+                             exampleCaptcha.ImageSize = new System.Drawing.Size(250, 50);
+                             exampleCaptcha.SoundStyle = BotDetect.SoundStyle.HiveMind;
+                            }
+                            @Html.Captcha(exampleCaptcha)
+                        </div>
+                        @*<div class="actions col-lg-6 Padding-Nil">
+
+                                <input id="CaptchaCode" class="text-box valid" name="CaptchaCode" type="text" value="" style="text-transform: uppercase;">
+                                <span class="status" id="status"></span>
+                            </div>*@
+                         <span class="status" id="status"></span>
+                        <script src="~/Scripts/ARTScript/BotDetectCaptcha.js"></script>
+
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="btn-section">
+        <button class="cancel-btn clsGoHome" type="button" id="btnUnlockAccForm1Cancel">@Art.Cancel</button>
+        <button class="submit-btn" type="button" id="btnUnlocklogin">@Art.Next</button>
+    </div>
+</form>
+
+
+<script src="~/Scripts/jquery.validate.js"></script>
+<script src="~/Scripts/ARTScript/AccountUnlockLogin.js?v=@JSVersion.version"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        accountUnlockLogin.defaults.defaultLang = '@Html.Raw(ViewBag.DefaultLang)';
+        accountUnlockLogin.defaults.enterUserId = '@Art.EnterUserName';
+        accountUnlockLogin.defaults.InvalidUserId = '@Art.InvalidUserId';
+        accountUnlockLogin.init();
+
+    });
+
+</script>

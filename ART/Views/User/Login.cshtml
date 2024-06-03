@@ -1,0 +1,120 @@
+﻿@using BotDetect.Web.Mvc;
+@{
+    ViewBag.Title = "ART :: " + Art.UserLogin;
+    Layout = "~/Views/LayoutMaster/_Layout1.cshtml";
+}
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="~/Scripts/jquery.validate.js"></script>
+
+
+<div class="col-sm-12 col-md-12 col-lg-12 page-title text-center">
+    <img src="~/Images/ArtImages/change-password.svg" alt="change-password">
+    <span>@Art.UserLogin</span>
+</div>
+
+<form class="form-horizontal" role="form" id="login-form" method="post" action="/User/Login" autocomplete="off" style="display:none">
+    <!-- content  section  start-->
+    @Html.AntiForgeryToken()
+    <div class="col-sm-12 col-md-12 col-lg-12 form-box">
+        @if (ArtHandler.Model.Singleton.Instance.ClientSessionID.Is_User_Info_Required == "Y")
+        {
+            <ul class="progressbar">
+                <li class="current">@Art.WizAuthentication</li>
+                <li>@Art.Register</li>
+                <li>@Art.Questionnaire</li>
+            </ul>
+        }
+        else
+        {
+            <ul class="progressbar progressbar-2">
+                <li class="current">@Art.WizAuthentication</li>
+                <li>@Art.Questionnaire</li>
+            </ul>
+        }
+
+        <!-- register section starts here-->
+        <div class="form-container row Padding-T30">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="col-sm-6 col-md-6 col-lg-6 margin-T15">
+                    <p class="required">@Art.UserName</p>
+                    <input type="text" class="text-box clsaplhanumeric" id="txtUserName" autocomplete="off" onkeypress="login.UserNameOnKeyPress()" name="txtUserName" value="" data-text="" />  @*data-text="@Art.EnterYourUserId in the format: 1234"*@
+                    @if (string.IsNullOrEmpty(ViewBag.IsAccountLocked))
+                    {
+                        <label id="lblMessage" class="error">@ViewBag.Message</label>
+                    }
+                    else
+                    {
+                        <div id="lblMessage" class="error">@ViewBag.Message  <a href="/UnlockAccount"> @Art.ClickHereToUnlock </a> </div>
+                    }
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-6 margin-T15">
+                    <p class="required">@Art.Password</p>
+                    <input type="password" class="text-box" id="txtPassword" name="txtPassword" autocomplete="off" value="" data-text="@Art.EnterYourPassword" />
+                    <label id="lblMessagePass" class="error"></label>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-12 margin-T15">
+                <div class="col-sm-6 col-md-6 col-lg-6">
+                    <p>Captcha</p>
+                    @*<form id="captcha_form">
+                        <div class="g-recaptcha" data-sitekey="@ART.MvcApplication.SiteKey"></div>
+                        <br />
+                        <span class="msg-error"></span>
+                        @*<input type="submit" value="Submit">
+                    </form>*@
+                    @using (Html.BeginForm("CheckCaptcha", "Example", FormMethod.Post, new { @class = "column", role = "form" }))
+                    {
+                        <div class="actions col-lg-12 Padding-Nil" id="CaptchaSection">
+                            @*@Html.TextBox("CaptchaCode")*@
+                            <input id="CaptchaCode" class="text-box valid" name="CaptchaCode" type="text" value="" style="text-transform: uppercase;" data-text="Please enter the Captcha" maxlength="6">
+                        </div>
+
+                        <div id="CaptchaElement">
+                            @{ MvcCaptcha exampleCaptcha = new MvcCaptcha("ExampleCaptcha");
+                                exampleCaptcha.UserInputID = "CaptchaCode";
+                                exampleCaptcha.CodeLength = 6;
+                                exampleCaptcha.CodeStyle = BotDetect.CodeStyle.Alphanumeric;
+                                exampleCaptcha.ImageStyle = BotDetect.ImageStyle.Chipped;
+                                exampleCaptcha.CustomDarkColor = System.Drawing.Color.Black;
+                                exampleCaptcha.ImageSize = new System.Drawing.Size(250, 40);
+                                exampleCaptcha.SoundStyle = BotDetect.SoundStyle.HiveMind;
+                            }
+                            @Html.Captcha(exampleCaptcha)
+                        </div>
+
+                        <span class="status" id="status"></span>
+
+                        @*<div class="actions col-lg-6 Padding-Nil">
+                            <input id="CaptchaCode" class="text-box valid" name="CaptchaCode" type="text" value="" style="text-transform: uppercase;">
+                            <span class="status" id="status"></span>
+                        </div>*@
+
+                        <script src="~/Scripts/ARTScript/BotDetectCaptcha.js"></script>
+
+                    }
+                </div>
+            </div>
+        </div>
+        <input type="hidden" value="7061737323313233"  id="hdky" />
+    </div>
+
+    <div class="btn-section">
+        <button class="cancel-btn clsGoHome" type="button">@Art.Cancel</button>
+        <button class="submit-btn" type="button" id="btnLogin">@Art.Login</button>
+    </div>
+</form>
+
+<script src="~/Scripts/cryptojs/aes.js"></script>
+<script src="~/Scripts/ARTScript/Login.js?v=@JSVersion.version"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        login.deafults.defaultLang = '@Html.Raw(ViewBag.DefaultLang)';
+        login.deafults.enterUserName = '@Art.EnterUserName';
+        login.deafults.enterpassword = '@Art.EnterPassword';
+        login.deafults.InvalidUserId = '@Art.InvalidUserId';
+
+        login.init();
+    });
+
+</script>

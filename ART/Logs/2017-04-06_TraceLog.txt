@@ -1,0 +1,14 @@
+2017-04-06 10:47:04 => UserID : 34501 ; Message : UserEnroll :: Login ; TrStatus : Started ; SessionId : q305uznyyudm3rtpwxus0hpf ; 
+2017-04-06 10:47:07 => UserID : 34501 ; Message : UserEnroll :: Login ; TrStatus : Valid login ; SessionId : q305uznyyudm3rtpwxus0hpf ; 
+2017-04-06 10:47:08 => UserID : 34501 ; Message : UserEnroll :: Register_User_Info ; TrStatus : Page load ; SessionId : q305uznyyudm3rtpwxus0hpf ; 
+2017-04-06 10:47:13 => UserID : 34501 ; Message : UserEnroll :: Register ; TrStatus : Page Load ; SessionId : q305uznyyudm3rtpwxus0hpf ; 
+2017-04-06 11:10:41 => UserID : 34501 ; Message : UserEnroll :: Login ; TrStatus : Started ; SessionId : q305uznyyudm3rtpwxus0hpf ; 
+2017-04-06 11:10:42 => UserID : 34501 ; Message : UserEnroll :: Login ; TrStatus : Valid login ; SessionId : q305uznyyudm3rtpwxus0hpf ; 
+2017-04-06 11:10:43 => UserID : 34501 ; Message : UserEnroll :: Register_User_Info ; TrStatus : Page load ; SessionId : q305uznyyudm3rtpwxus0hpf ; 
+2017-04-06 11:10:47 => UserID : 34501 ; Message : UserEnroll :: Register ; TrStatus : Page Load ; SessionId : q305uznyyudm3rtpwxus0hpf ; 
+2017-04-06 11:11:10 => UserID : 34501 ; Message : UserEnroll :: Register ; TrStatus : Page Load ; SessionId : q305uznyyudm3rtpwxus0hpf ; 
+2017-04-06 11:29:58 => UserID : 34501 ; Message : CHANGE_PASSWORD ; TrStatus : User Existance - Success ; SessionId : q305uznyyudm3rtpwxus0hpf ; 
+2017-04-06 11:29:58 => UserID : 34501 ; Message : CHANGE_PASSWORD ; TrStatus : OTPValidation - Success ; SessionId : q305uznyyudm3rtpwxus0hpf ; 
+2017-04-06 11:29:59 => UserID : 34501 ; Message : CHANGE_PASSWORD ; TrStatus : Change Password - Success ; SessionId : q305uznyyudm3rtpwxus0hpf ; 
+2017-04-06 11:30:07 => UserID : 34501 ; Message : CHANGE_PASSWORD ; TrStatus : Create SUMMIT ITSM incident - START ; SessionId : q305uznyyudm3rtpwxus0hpf ; 
+2017-04-06 11:31:29 => UserID : 34501 ; Message : CHANGE_PASSWORD ; TrStatus : Create SUMMIT ITSM incident - END ; SessionId : q305uznyyudm3rtpwxus0hpf ; 

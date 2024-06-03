@@ -1,0 +1,5 @@
+2017-04-12 05:34:30 => UserID : 34501 ; Message : CHANGE_PASSWORD ; TrStatus : User Existance - Success ; SessionId : kwyrkcjmmuhp5tck3rmqkpl0 ; 
+2017-04-12 05:34:31 => UserID : 34501 ; Message : CHANGE_PASSWORD ; TrStatus : OTPValidation - Success ; SessionId : kwyrkcjmmuhp5tck3rmqkpl0 ; 
+2017-04-12 05:34:32 => UserID : 34501 ; Message : CHANGE_PASSWORD ; TrStatus : Change Password - Success ; SessionId : kwyrkcjmmuhp5tck3rmqkpl0 ; 
+2017-04-12 05:34:44 => UserID : 34501 ; Message : CHANGE_PASSWORD ; TrStatus : Create SNOW ITSM incident - START ; SessionId : kwyrkcjmmuhp5tck3rmqkpl0 ; 
+2017-04-12 05:36:18 => UserID : 34501 ; Message : CHANGE_PASSWORD ; TrStatus : Create SNOW ITSM incident - END ; SessionId : kwyrkcjmmuhp5tck3rmqkpl0 ; 

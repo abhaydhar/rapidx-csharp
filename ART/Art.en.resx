@@ -1,0 +1,582 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccountIsLocked" xml:space="preserve">
+    <value>Your account is locked</value>
+  </data>
+  <data name="AccountLockMsg" xml:space="preserve">
+    <value>You have exceeded the maximum number of attempts allowed, your account has been locked for</value>
+  </data>
+  <data name="AccountNotLocked" xml:space="preserve">
+    <value>Your account is not locked</value>
+  </data>
+  <data name="AccountRecoveryTool" xml:space="preserve">
+    <value>Account Recovery Tool</value>
+  </data>
+  <data name="accountunlock_home" xml:space="preserve">
+    <value>Unlock Account</value>
+  </data>
+  <data name="AllQuestionAnswerMandateError" xml:space="preserve">
+    <value>All the questions must be answered</value>
+  </data>
+  <data name="answer" xml:space="preserve">
+    <value>Answer</value>
+  </data>
+  <data name="AnswerWrongErrMsg" xml:space="preserve">
+    <value>Your answer is wrong, please try again</value>
+  </data>
+  <data name="ArtCaption" xml:space="preserve">
+    <value>meta data goes here...</value>
+  </data>
+  <data name="ArtCopyRights" xml:space="preserve">
+    <value>Copyright © 2017 Hexaware Technologies. All rights reserved.</value>
+  </data>
+  <data name="Authenticate" xml:space="preserve">
+    <value>Authenticate</value>
+  </data>
+  <data name="AuthenticationType" xml:space="preserve">
+    <value>Authentication Type</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Change" xml:space="preserve">
+    <value>Change</value>
+  </data>
+  <data name="ChangeOTPPassword" xml:space="preserve">
+    <value>Change/OTP Password</value>
+  </data>
+  <data name="changeotppassword_home" xml:space="preserve">
+    <value>change / otp password</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Change Password</value>
+  </data>
+  <data name="ChangepasswordCaption" xml:space="preserve">
+    <value>In order to accept the changes please fill in the information below</value>
+  </data>
+  <data name="ChangePasswordSuccess" xml:space="preserve">
+    <value>Password has been changed successfully</value>
+  </data>
+  <data name="ClickHereToUnlock" xml:space="preserve">
+    <value>Click here to unlock</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>Confirmation</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Confirm Password</value>
+  </data>
+  <data name="Continue" xml:space="preserve">
+    <value>Continue</value>
+  </data>
+  <data name="CurPassMin6Char" xml:space="preserve">
+    <value>Current Password must have minimum 6 characters</value>
+  </data>
+  <data name="CurrentPassword" xml:space="preserve">
+    <value>Current Password</value>
+  </data>
+  <data name="DOB" xml:space="preserve">
+    <value>Date Of Birth</value>
+  </data>
+  <data name="EmptyAnswerwError" xml:space="preserve">
+    <value>Please enter the answer</value>
+  </data>
+  <data name="EnableOTP_Caption" xml:space="preserve">
+    <value>Registering for the OTP facility allows you to use your mobile number for the authentication process. Use the OTP option if you forget your password and need to unlock your account.</value>
+  </data>
+  <data name="EnterCaptchaImageText" xml:space="preserve">
+    <value>Please enter the captcha shown below (case sensitive)</value>
+  </data>
+  <data name="EnterCurrentPassword" xml:space="preserve">
+    <value>Please enter your current password</value>
+  </data>
+  <data name="EnterDOB" xml:space="preserve">
+    <value>Please enter your date of birth</value>
+  </data>
+  <data name="EnterMobileNumber" xml:space="preserve">
+    <value>Please enter your mobile number</value>
+  </data>
+  <data name="EnterNewPassword" xml:space="preserve">
+    <value>Please enter a new password</value>
+  </data>
+  <data name="EnterOTP" xml:space="preserve">
+    <value>Please enter the received OTP</value>
+  </data>
+  <data name="EnterPassword" xml:space="preserve">
+    <value>Please enter your password</value>
+  </data>
+  <data name="EnterReceivedOtp" xml:space="preserve">
+    <value>Please enter the received OTP</value>
+  </data>
+  <data name="EnterUserId" xml:space="preserve">
+    <value>Please enter your User ID</value>
+  </data>
+  <data name="EnterUserName" xml:space="preserve">
+    <value>Please enter your User ID</value>
+  </data>
+  <data name="EnterYourPassword" xml:space="preserve">
+    <value>Enter your password</value>
+  </data>
+  <data name="EnterYourUserId" xml:space="preserve">
+    <value>Enter your User ID</value>
+  </data>
+  <data name="EnterYourUserName" xml:space="preserve">
+    <value>Enter your User Name</value>
+  </data>
+  <data name="Enter_OTP" xml:space="preserve">
+    <value>Enter OTP</value>
+  </data>
+  <data name="Error404Msg" xml:space="preserve">
+    <value>The page you are looking for might have been moved, its name changed or temporarily unvailable</value>
+  </data>
+  <data name="ErrorMsg" xml:space="preserve">
+    <value>Something went wrong, please try again after sometime</value>
+  </data>
+  <data name="ErrorSendMsg" xml:space="preserve">
+    <value>Error while sending the message</value>
+  </data>
+  <data name="ForgotPassword" xml:space="preserve">
+    <value>Reset Password</value>
+  </data>
+  <data name="Great" xml:space="preserve">
+    <value>Great</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="IncorrectDOBFormat" xml:space="preserve">
+    <value>Date of birth format is incorrect</value>
+  </data>
+  <data name="InvalidCaptcha" xml:space="preserve">
+    <value>Invalid Captcha</value>
+  </data>
+  <data name="InvalidDOB" xml:space="preserve">
+    <value>Invalid date of birth</value>
+  </data>
+  <data name="InvalidMobileNumber" xml:space="preserve">
+    <value>Invalid mobile number</value>
+  </data>
+  <data name="InvalidOTP" xml:space="preserve">
+    <value>Invalid OTP</value>
+  </data>
+  <data name="InvalidPassword" xml:space="preserve">
+    <value>Invalid current password</value>
+  </data>
+  <data name="InvalidUser" xml:space="preserve">
+    <value>Invalid User</value>
+  </data>
+  <data name="InvalidUserId" xml:space="preserve">
+    <value>Invalid User ID</value>
+  </data>
+  <data name="InvalidUserNamePassword" xml:space="preserve">
+    <value>Invalid User Name / Password</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="Max13Char" xml:space="preserve">
+    <value>Maximum of 13 characters only</value>
+  </data>
+  <data name="Min6Char" xml:space="preserve">
+    <value>Minimum of 6 characters</value>
+  </data>
+  <data name="Min9Char" xml:space="preserve">
+    <value>Minimum of 9 characters</value>
+  </data>
+  <data name="MinMaxMsg" xml:space="preserve">
+    <value>Characters between 9-13 only</value>
+  </data>
+  <data name="MissingUserID" xml:space="preserve">
+    <value>Please enter your User ID</value>
+  </data>
+  <data name="MobileNumber" xml:space="preserve">
+    <value>Mobile Number</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>New Password</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="OldPassword" xml:space="preserve">
+    <value>Old Password</value>
+  </data>
+  <data name="OneNumericChar" xml:space="preserve">
+    <value>One numeric character</value>
+  </data>
+  <data name="OneSmallLetter" xml:space="preserve">
+    <value>One small letter</value>
+  </data>
+  <data name="OneSpecialChar" xml:space="preserve">
+    <value>One special character</value>
+  </data>
+  <data name="OneUpperCaseLetter" xml:space="preserve">
+    <value>One uppercase letter</value>
+  </data>
+  <data name="OTP" xml:space="preserve">
+    <value>OTP</value>
+  </data>
+  <data name="OTPDisableMsg" xml:space="preserve">
+    <value>To enable this feature, please enroll again with  "Register for OTP" option</value>
+  </data>
+  <data name="OTPMin6Char" xml:space="preserve">
+    <value>OTP must have a minimum of 6 characters</value>
+  </data>
+  <data name="OTP_Caption" xml:space="preserve">
+    <value>OTP will be sent to</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="PasswordLength" xml:space="preserve">
+    <value>Password Should be 9-13 Characters long</value>
+  </data>
+  <data name="PasswordMismatch" xml:space="preserve">
+    <value>Password mismatch</value>
+  </data>
+  <data name="PasswordPolicy" xml:space="preserve">
+    <value>Password should contain at least one small letter, one capital letter, one symbol and one numeric character</value>
+  </data>
+  <data name="PasswordResetSuccess" xml:space="preserve">
+    <value>Password was successfully reset!</value>
+  </data>
+  <data name="PleaseEnterImageText" xml:space="preserve">
+    <value>Enter the captcha</value>
+  </data>
+  <data name="PlsConfirmNewPassword" xml:space="preserve">
+    <value>Please confirm your new password</value>
+  </data>
+  <data name="PlsConfirmPassword" xml:space="preserve">
+    <value>Please confirm your password</value>
+  </data>
+  <data name="PlsEnterCaptcha" xml:space="preserve">
+    <value>Please enter the captcha (case sensitive)</value>
+  </data>
+  <data name="PlsEnterOtp" xml:space="preserve">
+    <value>Please enter OTP</value>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>Previous</value>
+  </data>
+  <data name="question" xml:space="preserve">
+    <value>question</value>
+  </data>
+  <data name="QuestionAnswerWrong" xml:space="preserve">
+    <value>your question and answer is wrong</value>
+  </data>
+  <data name="Questionnaire" xml:space="preserve">
+    <value>Questions</value>
+  </data>
+  <data name="ReenterPassword" xml:space="preserve">
+    <value>Please confirm your new password</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Validation</value>
+  </data>
+  <data name="RegisterFailure" xml:space="preserve">
+    <value>Problem while registering, please try after some time!</value>
+  </data>
+  <data name="RegisterForOTP" xml:space="preserve">
+    <value>Register for OTP</value>
+  </data>
+  <data name="RegisterSuccess" xml:space="preserve">
+    <value>question and answers saved successfully!</value>
+  </data>
+  <data name="resetpasswrod_home" xml:space="preserve">
+    <value>Reset password</value>
+  </data>
+  <data name="ResetYourPassword" xml:space="preserve">
+    <value>Reset Your Password</value>
+  </data>
+  <data name="SecQue_Caption" xml:space="preserve">
+    <value>Will navigate you to the questions page</value>
+  </data>
+  <data name="SecurityQuestion" xml:space="preserve">
+    <value>Security Question</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>Send</value>
+  </data>
+  <data name="SomethingWentWrong" xml:space="preserve">
+    <value>Something went wrong, please try after some time</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="UniqueQuestionValidation" xml:space="preserve">
+    <value>Question must be unique</value>
+  </data>
+  <data name="unlock" xml:space="preserve">
+    <value>unlock</value>
+  </data>
+  <data name="UnlockAccount" xml:space="preserve">
+    <value>Unlock Account</value>
+  </data>
+  <data name="UnlockFailure" xml:space="preserve">
+    <value>A problem was faced while unlocking your account, please try after some time</value>
+  </data>
+  <data name="UnlockSuccess" xml:space="preserve">
+    <value>your account was unlocked successfully!</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="userenrollupdate_home" xml:space="preserve">
+    <value>User Enroll / Update</value>
+  </data>
+  <data name="UserID" xml:space="preserve">
+    <value>User ID</value>
+  </data>
+  <data name="UserIdNotExist" xml:space="preserve">
+    <value>User ID does not exist</value>
+  </data>
+  <data name="UserLogin" xml:space="preserve">
+    <value>User Login</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>User ID</value>
+  </data>
+  <data name="UserNameNotExist" xml:space="preserve">
+    <value>User ID does not exist</value>
+  </data>
+  <data name="UserNotRegistered" xml:space="preserve">
+    <value>Please enroll to continue</value>
+  </data>
+  <data name="ValidateAnswer" xml:space="preserve">
+    <value>Please answer the question</value>
+  </data>
+  <data name="WizAuthentication" xml:space="preserve">
+    <value>Authentication</value>
+  </data>
+  <data name="OTPFailureMsg" xml:space="preserve">
+    <value>Due to network issues, you might not have received the OTP. Pls try with </value>
+  </data>
+  <data name="OTPReceiveMsg" xml:space="preserve">
+    <value>You would receive your OTP in</value>
+  </data>
+  <data name="OTPResendMsg" xml:space="preserve">
+    <value>Still you didn't receive the OTP? please</value>
+  </data>
+  <data name="Resend" xml:space="preserve">
+    <value>Resend</value>
+  </data>
+  <data name="PasswordSpaceMsg" xml:space="preserve">
+    <value>Password should not contain space</value>
+  </data>
+  <data name="OTPMinMsg" xml:space="preserve">
+    <value>OTP should be minimum of 6 characters</value>
+  </data>
+  <data name="OTPMaxAttemptMsg" xml:space="preserve">
+    <value>You have reached maximum number of attempts, please try after sometime</value>
+  </data>
+  <data name="MobileNumRegisterFailure" xml:space="preserve">
+    <value>Problem while update mobile number, please try after sometime</value>
+  </data>
+  <data name="MobileNumRegisterSuccess" xml:space="preserve">
+    <value>Your mobile number updated successfully!!!, please click on Next to continue</value>
+  </data>
+  <data name="Validate" xml:space="preserve">
+    <value>Validate</value>
+  </data>
+  <data name="MobileNumberToolTip" xml:space="preserve">
+    <value>Please confirm your mobile number</value>
+  </data>
+  <data name="MobilNumberRegisterValidation" xml:space="preserve">
+    <value>Your mobile number is not validated yet, click "Ok" to continue the validation or "Cancel" to skip the mobile number registeration</value>
+  </data>
+	<data name="USMobilNumberRegisterValidation" xml:space="preserve">
+    <value>Your new mobile number will be verified using OTP, do you wish to change your mobile number</value>
+  </data>
+  <data name="SendOTP" xml:space="preserve">
+    <value>Send OTP</value>
+  </data>
+  <data name="ValidateOTP" xml:space="preserve">
+    <value>Validate OTP</value>
+  </data>
+  <data name="PasswordInfo_information" xml:space="preserve">
+    <value>information</value>
+  </data>
+  <data name="PasswordInfo_information1" xml:space="preserve">
+    <value>Minimum 9 characters and Maximum 13 characters long</value>
+  </data>
+  <data name="PasswordInfo_information2" xml:space="preserve">
+    <value>Maximum 13 characters in length</value>
+  </data>
+  <data name="PasswordInfo_information3" xml:space="preserve">
+    <value>Should have at least any four of the below - 
+•One capital letter
+•One small letter
+•One numeric
+•One special character 
+(Except -`:"[]')</value>
+  </data>
+  <data name="PasswordInfo_information4" xml:space="preserve">
+    <value>Should not have been used last 7 times</value>
+  </data>
+  <data name="PasswordInfo_information5" xml:space="preserve">
+    <value>Should not contain your employee id or the phrase password, pass , hexaware ,hex etc...</value>
+  </data>
+  <data name="PasswordInfo_information6" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SamePasswordMsg" xml:space="preserve">
+    <value>Current password and new password should not be same</value>
+  </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="ConfirmMessage" xml:space="preserve">
+    <value>Kindly confirm your answer. To proceed please click "Submit" else  "Cancel".</value>
+  </data>
+  <data name="MobileNumberIsPrivate" xml:space="preserve">
+    <value>Make my mobile number private</value>
+  </data>
+  <data name="ExcemptedUserMsg" xml:space="preserve">
+    <value>Your are not authenticated to access this site, please contact administrator</value>
+  </data>
+  <data name="PasswordHistoryErrMsg" xml:space="preserve">
+    <value>Your new password matches your password history or not allowed to change in 24 hours</value>
+  </data>
+  <data name="DiffSessionMsg" xml:space="preserve">
+    <value>There is already a user session available in the browser, Please close and login with a different user</value>
+  </data>
+  <data name="HomeChangePassword" xml:space="preserve">
+    <value>Change &lt;br /&gt;
+Password</value>
+  </data>
+  <data name="HomeResetPassword" xml:space="preserve">
+    <value>Reset &lt;br/&gt;
+Password</value>
+  </data>
+  <data name="HomeUnlockAccount" xml:space="preserve">
+    <value>Unlock &lt;br/&gt;
+Account</value>
+  </data>
+  <data name="HomeUserEnroll" xml:space="preserve">
+    <value>User Enroll&amp;nbsp;/&lt;br/&gt;
+Update</value>
+  </data>
+</root>

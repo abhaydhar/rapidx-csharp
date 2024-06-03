@@ -1,0 +1,351 @@
+﻿@{
+    ViewBag.Title = "ART Tool Web Page";
+    Layout = "~/Views/LayoutMaster/_DefaultLayout.cshtml";
+}
+<script src="~/Scripts/jquery.min.js"></script>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
+<script src="~/Scripts/jquery.validate.js"></script>
+
+<script src="~/Scripts/cryptojs/core.js"></script>
+<script src="~/Scripts/cryptojs/aes.js"></script>
+
+@*<script src='https://www.google.com/recaptcha/api.js'></script>*@
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        ///
+        var defaults = {
+            // Form input element that the user will type into. Required.
+            input: null,
+            // Element which the CAPTCHA will be appended to. Required.
+            display: null,
+            // Function to call when the CAPTCHA passes.
+            pass: function () { return true; },
+            // Function to call when the CAPTCHA fails to pass.
+            fail: function () { return false; },
+            // Length of CAPTCHA text.
+            captchaLength: 5,
+            // Characters to use when generating text
+            chars: '0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz'
+        };
+        function generateCaptcha(options) {
+            var text = '';
+            for (var i = 0; i < options.captchaLength; i++) {
+                var rand = Math.floor(Math.random() * options.chars.length);
+                text += options.chars.charAt(rand);
+            }
+            return text;
+        }
+        function init(form, options) {
+            var $this = $(form);
+            var captchaText = generateCaptcha(options);
+            $("#captchavalue").val(captchaText)
+            $this.data('captchaText', captchaText);
+            // Create CAPTCHA ui
+            var table = $('<table id="captchatable"></table>').css({
+                'font-family': 'Arial',
+                'background-color': 'transparent',
+                'text-decoration': 'none',
+                'line-height': '38px',
+                'background': 'url("~/Images/captchawhitline.png") repeat-x repeat-y'
+            });
+            var row = $('<tr></tr>').appendTo(table);
+            for (var i = 0; i < captchaText.length; i++) {
+                $('<td>' + captchaText.charAt(i) + '</td>').css({
+                    'border-collapse': 'collapse',
+                    'margin': '0'
+                }).appendTo(row);
+            }
+            table.appendTo(options.display);
+
+            // Hook events
+            $this.unbind('submit');
+
+            $this.bind('submit', function (event) {
+                var value = $(options.input).val();
+                if (value === captchaText) {
+                    return options.pass.apply(this);
+                } else {
+                    return options.fail.apply(this);
+                }
+            });
+
+        }
+        $.fn.clientSideCaptcha = function (options) {
+            var opts = $.extend({}, defaults, options);
+            return this.each(function () {
+                if (this.tagName.toLowerCase() === 'form' && $(opts.input).length && $(opts.display).length) {
+                    init(this, opts);
+                }
+            });
+        }
+        ///
+        $("form").clientSideCaptcha({
+            input: "#captchaText",
+            display: "#captcha",
+            pass: function () {
+                //$("#msgalert").text("proceed");
+                return true;
+            },
+            fail: function () {
+                //$("#msgalert").text("Invalid Captcha");
+                $("input[type=password]").each(function () { $(this).val(""); });
+                return false;
+            }
+        });
+
+        $.validator.addMethod("regex", function (value, element, regexp) {
+            var re = new RegExp(regexp);
+            return this.optional(element) || re.test(value);
+        }, "Please check your input.");
+
+        var validate = $("#pwdreset-form").validate({
+            debug: true,
+            //onfocusout: function (element) { $(element).valid(); },
+            onsubmit: false,
+            onkeyup: false,
+            onfocusout: false,
+            onblur: false,
+            rules: {
+                inputEmail: {
+                    required: true
+                },
+                OTPPassword: {
+                    required: true,
+                    minlength: 6
+                },
+                NewPassword: {
+                    required: true,
+                    maxlength: 13,
+                    minlength: 9,
+                    regex: "(?=^.{9,13}$)(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[^A-Za-z0-9]).*"
+                },
+                ConfNewPassword: {
+                    required: true,
+                    equalTo: "#inputPassword"
+                },
+                captchaText: {
+                    required: true,
+                    equalTo: "#captchavalue"
+                }
+            },
+            messages: {
+                inputEmail: {
+                    required: "Missing User ID"
+                },
+                OTPPassword: {
+                    required: "Please Enter the Received OTP",
+                    minlength: "minimum 6 characters"
+                },
+                NewPassword: {
+                    required: "Please Enter New Password",
+                    maxlength: "Maximum of 13 Characters only",
+                    minlength: "Minimum Length of 9 Characters",
+                    regex: "Password Should Contain One small, One capital One symbol and One numeric characters"
+                },
+                ConfNewPassword: {
+                    required: "Please ReEnter The New Password",
+                    equalTo: "Passwords Mismatch"
+                },
+                captchaText: {
+                    required: "Please Enter the Text in Image",
+                    equalTo: "Invalid Captcha"
+                }
+            }
+        });
+        function clearValidation(formElement) {
+            //Internal $.validator is exposed through $(form).validate()
+            var validator = $(formElement).validate();
+            //Iterate through named elements inside of the form, and mark them as error free
+            $('[name]', formElement).each(function () {
+                validator.successList.push(this);//mark as error free
+                validator.showErrors();//remove error messages if present
+            });
+            validator.resetForm();//remove error class on name elements and clear history
+            validator.reset();//remove all error and success data
+        }
+        $("#CancelBtn").on("click", function (e) {
+            var myForm = document.getElementById("pwdreset-form");
+            clearValidation(myForm);
+            $("input[type=text]").each(function () { $(this).val(""); });
+            $("input[type=password]").each(function () { $(this).val(""); });
+        });
+        $("#recaptcha").on("click", function (e) {
+            $("#msgalert").text("");
+            $("#captchaText").val("");
+            $("#captcha table").remove();
+            $("form#pwdreset-form.form-horizontal").removeData('captchaText');
+            $("form").clientSideCaptcha({
+                input: "#captchaText",
+                display: "#captcha",
+                pass: function () {
+                    $("#msgalert").text("proceed");
+                    return true;
+                },
+                fail: function () {
+                    $("#msgalert").text("Invalid Captcha");
+                    $("input[type=password]").each(function () { $(this).val(""); });
+                    return false;
+                }
+            });
+        });
+
+
+        $("#btnChgPassword").on("click", function (e) {
+            var isValid = $("#pwdreset-form").valid();
+            if (!isValid) {
+                return;
+                e.preventDefault();
+            }
+            var hky = $("#hdky").val();
+            //var key = CryptoJS.enc.Utf8.parse('7061737323313233');
+            //var iv = CryptoJS.enc.Utf8.parse('7061737323313233');
+            var key = CryptoJS.enc.Utf8.parse(hky);
+            var iv = CryptoJS.enc.Utf8.parse(hky);
+            var encryptedOtp = CryptoJS.AES.encrypt(CryptoJS.enc.Utf8.parse($("#inputOtpPassword").val()), key,
+                {
+                    keySize: 128 / 8,
+                    iv: iv,
+                    mode: CryptoJS.mode.CBC,
+                    padding: CryptoJS.pad.Pkcs7
+                });
+            var encryptedPassword = CryptoJS.AES.encrypt(CryptoJS.enc.Utf8.parse($("#inputPassword").val()), key,
+                {
+                    keySize: 128 / 8,
+                    iv: iv,
+                    mode: CryptoJS.mode.CBC,
+                    padding: CryptoJS.pad.Pkcs7
+                });
+            $("#inputOtpPassword").val(encryptedOtp);
+            $("#inputPassword").val(encryptedPassword);
+            $("#pwdreset-form").submit();
+        });
+    });
+</script>
+
+<style type="text/css">
+    .ui-datepicker {
+        width: 225px;
+        background: inherit;
+        border: 1px solid #555;
+        /*color: #EEE;*/
+        height: auto;
+        font: 9pt Arial, sans-serif;
+        -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+        -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+    }
+
+    .ui-datepicker-div {
+        border: 3px solid aliceblue;
+    }
+
+    .ui-datepicker-calendar {
+        width: 225px;
+    }
+</style>
+<div class="containerset">
+    <div class="col-sm-12 col-md-12 col-lg-12 padding-nil">
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 padding-nil margintop25">
+            <div class="reset-pass">
+                <img src="~/Images/lock-icon.gif">
+                <span class="reset-passw">@Art.ResetYourPassword</span>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-12 padding-nil box-shadowwidth" id="form-content">
+                <div class="col-sm-12 col-md-12 col-lg-12 padding-nil">
+                    <form class="form-horizontal" role="form" id="pwdreset-form" method="post" action="../Home/ResetPassword" autocomplete="off">
+                        <div class="control-group col-md-12 marginT40">
+                            <label class=" col-md-4 col-sm-4 col-xs-4  lftxt " for="inputEmail">@Art.UserID</label>
+                            <div class="controls col-md-8 col-sm-8 col-xs-8">
+                                <input type="text" class="txtfld" id="inputEmail" name="inputEmail">
+                            </div>
+                        </div>
+                        <div class="control-group col-md-12 marginT15">
+                            @if (ViewBag.Is_OTP_Enabled == "Y")
+                            {
+                                <label class=" col-md-4 col-sm-4 col-xs-4  lftxt " for="inputPassword">@Art.OTP</label>
+                            }
+                            else
+                            {
+                                <label class=" col-md-4 col-sm-4 col-xs-4  lftxt " for="inputPassword">@Art.OldPassword</label>
+                            }
+
+                            <div class="controls col-md-8 col-sm-8 col-xs-8">
+                                <input type="password" class="txtfld" id="inputOtpPassword" name="OTPPassword">
+                            </div>
+                        </div>
+                        <div class="control-group col-md-12 marginT15">
+                            <label class=" col-md-4 col-sm-4 col-xs-4 lftxt " for="inputPassword">@Art.NewPassword</label>
+                            <div class="controls col-md-8 col-sm-8 col-xs-8">
+                                <input type="password" class="txtfld" id="inputPassword" name="NewPassword">
+                            </div>
+                        </div>
+                        <div class="control-group col-md-12 marginT15">
+                            <label class="col-md-4 col-sm-4 col-xs-4  lftxt " for="inputConfPassword">@Art.ConfirmPassword</label>
+                            <div class="controls col-md-8 col-sm-8 col-xs-8">
+                                <input type="password" class="txtfld" id="inputConfPassword" name="ConfNewPassword">
+                            </div>
+                        </div>
+
+
+                        <div class="control-group col-md-12 marginT15" style="margin-bottom:2px !important">
+                            <label class="col-md-4 col-sm-4 col-xs-4  lftxt " for="captchaText">@Art.PleaseEnterImageText</label>
+                            <div class="controls col-md-8 col-sm-8 col-xs-8">
+                                <div class="col-md-12 col-sm-12 col-xs-12 padding-nil">
+                                    <input type="text" class="txtfld" id="captchaText" name="captchaText">
+                                    <input type="hidden" value="" id="captchavalue" />
+                                    <div class="row padding-nil">
+                                        <div class="col-md-4 col-sm-4 col-xs-4" id="captcha"></div>
+                                        <div class="col-md-2 col-sm-2 col-xs-2 pull-left">
+                                            <button class="refreshcaptcha" id="recaptcha" type="button"><span class="glyphicon-refresh"></span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="control-group col-md-12" style="margin-bottom: 10px;margin-top: 10px;">
+                            <label class="col-md-4 col-sm-4 col-xs-4  lftxt "></label>
+                            <div class="controls col-md-8 col-sm-8 col-xs-8">
+                                <div class="col-md-12 col-sm-12 col-xs-12 padding-nil">
+                                    <button class="submitbtn margin-bg" type="button" id="btnChgPassword">@Art.ChangePassword</button>
+                                    <button class="cancelbtn margin-bg" type="button" id="CancelBtn">@Art.Cancel</button>
+                                    <p id="msgalert">@ViewBag.result<p />
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-12 col-md-12 col-lg-12 padding-nil meta-data">
+        <h6>Your password Should:</h6>
+        <div class="col-xs-12 col-sm-6 col-md-6 col=lg-6 padding-nil">
+            <div class="col-sm-12 col-md-12 col-lg-12 padding-nil">
+                <ul class="meta-list" id="meta-list-left">
+                    <li>Minimum 9 characters in length</li>
+                    <li>Maximum 13 characters in length</li>
+                    <li>Should not contain your employee id or the phrase password, pass, hexaware, hex etc...</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col=lg-6 padding-nil">
+            <div class="col-sm-12 col-md-12 col-lg-12 padding-nil">
+                <ul class="meta-list" id="meta-list-right">
+                    <li>Should not have been used last 7 times.</li>
+                    <li>
+                        Should have at least any four of the below –
+                        <ul>
+                            <li>One capital letter and One small letter</li>
+                            <li>One numeric and One special character (Except -`:"[]')</li>
+                        </ul>
+                    </li>
+                </ul>
+                <input type="hidden" value="7061737323313233" id="hdky" />
+            </div>
+        </div>
+    </div>
+</div>
