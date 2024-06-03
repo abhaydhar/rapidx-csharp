@@ -1,7 +1,0 @@
-2017-01-16 11:42:11 => UserID : 34501 ; Message : UserEnroll :: Login ; TrStatus : Started ; SessionId : 53rkknr515f3qnqadvagysnl ; 
-2017-01-16 11:42:19 => UserID : 34501 ; Message : UserEnroll :: Login ; TrStatus : Valid login ; SessionId : 53rkknr515f3qnqadvagysnl ; 
-2017-01-16 11:42:19 => UserID : 34501 ; Message : UserEnroll :: Register_User_Info ; TrStatus : Page load ; SessionId : 53rkknr515f3qnqadvagysnl ; 
-2017-01-16 11:43:06 => UserID : 32393 ; Message : UserEnroll :: Register_User_Info ; TrStatus : OTP sent , now redirecting to RegisterUserInformation ; SessionId : 53rkknr515f3qnqadvagysnl ; 
-2017-01-16 11:43:06 => UserID : 34501 ; Message : UserEnroll :: Register_User_Info ; TrStatus : Page load ; SessionId : 53rkknr515f3qnqadvagysnl ; 
-2017-01-16 11:44:32 => UserID : 32393 ; Message : UserEnroll :: Register_User_Info ; TrStatus : Page load ; SessionId : 53rkknr515f3qnqadvagysnl ; 
-2017-01-16 11:44:41 => UserID : 34501 ; Message : UserEnroll :: Register_User_Info ; TrStatus : Page load ; SessionId : 53rkknr515f3qnqadvagysnl ; 
