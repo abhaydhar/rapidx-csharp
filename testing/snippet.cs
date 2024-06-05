@@ -72,7 +72,6 @@ public class Person
     public virtual ICollection<Order> Orders { get; set; }
 	
 }
-
 class DatabaseOperations
 {
     static string connectionString = "your_connection_string_here";
