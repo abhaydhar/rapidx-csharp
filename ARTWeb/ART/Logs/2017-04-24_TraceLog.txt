@@ -1,5 +1,0 @@
-2017-04-24 09:43:15 => UserID : 34501 ; Message : CHANGE_PASSWORD ; TrStatus : User Existance - Success ; SessionId : uu2che2zviicz0etypqjx2wb ; 
-2017-04-24 09:43:16 => UserID : 34501 ; Message : CHANGE_PASSWORD ; TrStatus : OTPValidation - Success ; SessionId : uu2che2zviicz0etypqjx2wb ; 
-2017-04-24 09:43:16 => UserID : 34501 ; Message : CHANGE_PASSWORD ; TrStatus : Change Password - Success ; SessionId : uu2che2zviicz0etypqjx2wb ; 
-2017-04-24 09:43:17 => UserID : 34501 ; Message : CHANGE_PASSWORD ; TrStatus : Create SUMMIT ITSM incident - START ; SessionId : uu2che2zviicz0etypqjx2wb ; 
-2017-04-24 09:43:21 => UserID : 34501 ; Message : CHANGE_PASSWORD ; TrStatus : Create SUMMIT ITSM incident - END ; SessionId : uu2che2zviicz0etypqjx2wb ; 

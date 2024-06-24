@@ -1,6 +1,0 @@
-*****************Tuesday, January 3, 2017 4:47 PM****************
-Object reference not set to an instance of an object.
-   at ArtHandler.Model.CustomException..ctor(String User, String Exmsg, String Stackmsg, String methodName) in d:\GIT\net\ARTWeb\src\ArtHandler\Model\LogModel.cs:line 14
-   at ArtHandler.Repository.SettingsRepository.InitializeApplicationSettings() in d:\GIT\net\ARTWeb\src\ArtHandler\Repository\SettingsRepository.cs:line 83
-   at ART.MvcApplication.Application_Start() in d:\GIT\net\ARTWeb\src\ART\Global.asax.cs:line 22
------------ END OF CONTENT -----------------
