@@ -1,0 +1,70 @@
+﻿@{
+    ViewBag.Title = "ART :: " + Art.UserLogin;
+    Layout = "~/Views/LayoutMaster/_Layout1.cshtml";
+}
+<script src="~/Scripts/jquery.validate.js"></script>
+
+<div class="content-container">
+    <div class="col-sm-12 col-md-12 col-lg-12 page-title text-center">
+        <img src="~/Images/ArtImages/change-password.svg" alt="change-password">
+        <span>@Art.UserLogin</span>
+    </div>
+
+    <form class="form-horizontal" role="form" id="login-form" method="post" action="/User/Login" autocomplete="off" style="display:none">
+        <!-- content  section  start-->
+        @Html.AntiForgeryToken()
+        <div class="col-sm-12 col-md-12 col-lg-12 form-box">
+            @*@if (ArtHandler.Model.Singleton.Instance.ClientSessionID.Is_User_Info_Required == "Y")
+                {
+                    <ul class="progressbar">
+                        <li class="current">@Art.WizAuthentication</li>
+                        <li>@Art.Register</li>
+                        <li>@Art.Questionnaire</li>
+                    </ul>
+                }
+                else
+                {
+                    <ul class="progressbar progressbar-2">
+                        <li class="current">@Art.WizAuthentication</li>
+                        <li>@Art.Questionnaire</li>
+                    </ul>
+                }*@
+
+            <!-- register section starts here-->
+            <div class="form-container row Padding-T30">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <p class="required">@Art.UserName</p>
+                        <input type="text" class="text-box clsaplhanumeric" id="txtUserName" name="txtUserName" value="" onkeypress="login.UserNameOnKeyPress()" data-text="@Art.EnterYourUserId in the format: 1234" />
+                        <label id="lblMessage" class="error">@ViewBag.Message</label>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <p class="required">@Art.Password</p>
+                        <input type="password" class="text-box" id="txtPassword" name="txtPassword" value="" data-text="@Art.EnterYourPassword" />
+                        <label id="lblMessagePass" class="error"></label>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="btn-section">
+            <button class="cancel-btn clsGoHome" type="button">@Art.Cancel</button>
+            <button class="submit-btn" type="button" id="btnLogin">@Art.Login</button>
+        </div>
+    </form>
+
+    </div>
+    <script src="~/Scripts/ARTScript/Login.js?v=@JSVersion.version"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //Start get the user deatils from User Login page.
+            login.deafults.defaultLang = '@Html.Raw(ViewBag.DefaultLang)';
+            login.deafults.enterUserName = '@Art.EnterUserName';
+            login.deafults.enterpassword = '@Art.EnterPassword';
+            login.deafults.InvalidUserId = '@Art.InvalidUserId';
+            //End get the user deatils from User Login page.
+            login.init();
+        });
+
+    </script>

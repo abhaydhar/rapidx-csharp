@@ -1,0 +1,37 @@
+D:\GIT\net\ArtWebMaster\ArtHandler\bin\Debug\ArtHandler.dll
+D:\GIT\net\ArtWebMaster\ArtHandler\bin\Debug\ArtHandler.pdb
+D:\GIT\net\ArtWebMaster\ArtHandler\bin\Debug\Newtonsoft.Json.dll
+D:\GIT\net\ArtWebMaster\ArtHandler\bin\Debug\Newtonsoft.Json.xml
+D:\GIT\net\ArtWebMaster\ArtHandler\obj\Debug\ArtHandler.csproj.CoreCompileInputs.cache
+D:\GIT\net\ArtWebMaster\ArtHandler\obj\Debug\ArtHandler.dll
+D:\GIT\net\ArtWebMaster\ArtHandler\obj\Debug\ArtHandler.pdb
+D:\GIT\net\ArtWebMaster\ArtHandler\obj\Debug\ArtHandler.csprojResolveAssemblyReference.cache
+D:\net\net\ArtWebMaster\ArtHandler\obj\Debug\ArtHandler.csproj.CoreCompileInputs.cache
+D:\net\net\ArtWebMaster\ArtHandler\bin\Debug\ArtHandler.dll
+D:\net\net\ArtWebMaster\ArtHandler\bin\Debug\ArtHandler.pdb
+D:\net\net\ArtWebMaster\ArtHandler\bin\Debug\Newtonsoft.Json.dll
+D:\net\net\ArtWebMaster\ArtHandler\bin\Debug\Newtonsoft.Json.xml
+D:\net\net\ArtWebMaster\ArtHandler\obj\Debug\ArtHandler.dll
+D:\net\net\ArtWebMaster\ArtHandler\obj\Debug\ArtHandler.pdb
+D:\net\net\ArtWebMaster\ArtHandler\bin\Debug\MySql.Data.dll
+D:\net\net\ArtWebMaster\ArtHandler\bin\Debug\MySql.Data.xml
+D:\net\net\ArtWebMaster\ArtHandler\obj\Debug\ArtHandler.csproj.CopyComplete
+D:\net\net\ArtWebMaster\ArtHandler\obj\Debug\ArtHandler.csprojAssemblyReference.cache
+D:\GIT\net\net\ArtWebMaster\ArtHandler\bin\Debug\ArtHandler.dll
+D:\GIT\net\net\ArtWebMaster\ArtHandler\bin\Debug\ArtHandler.pdb
+D:\GIT\net\net\ArtWebMaster\ArtHandler\bin\Debug\Newtonsoft.Json.dll
+D:\GIT\net\net\ArtWebMaster\ArtHandler\bin\Debug\Newtonsoft.Json.xml
+D:\GIT\net\net\ArtWebMaster\ArtHandler\obj\Debug\ArtHandler.csprojAssemblyReference.cache
+D:\GIT\net\net\ArtWebMaster\ArtHandler\obj\Debug\ArtHandler.csproj.CoreCompileInputs.cache
+D:\GIT\net\net\ArtWebMaster\ArtHandler\obj\Debug\ArtHandler.csproj.CopyComplete
+D:\GIT\net\net\ArtWebMaster\ArtHandler\obj\Debug\ArtHandler.dll
+D:\GIT\net\net\ArtWebMaster\ArtHandler\obj\Debug\ArtHandler.pdb
+D:\Hexaware Art\ArtWebMaster\ArtHandler\bin\Debug\ArtHandler.dll
+D:\Hexaware Art\ArtWebMaster\ArtHandler\bin\Debug\ArtHandler.pdb
+D:\Hexaware Art\ArtWebMaster\ArtHandler\bin\Debug\Newtonsoft.Json.dll
+D:\Hexaware Art\ArtWebMaster\ArtHandler\bin\Debug\Newtonsoft.Json.xml
+D:\Hexaware Art\ArtWebMaster\ArtHandler\obj\Debug\ArtHandler.csproj.CoreCompileInputs.cache
+D:\Hexaware Art\ArtWebMaster\ArtHandler\obj\Debug\ArtHandler.csproj.CopyComplete
+D:\Hexaware Art\ArtWebMaster\ArtHandler\obj\Debug\ArtHandler.dll
+D:\Hexaware Art\ArtWebMaster\ArtHandler\obj\Debug\ArtHandler.pdb
+D:\Hexaware Art\ArtWebMaster\ArtHandler\obj\Debug\ArtHandler.csprojAssemblyReference.cache
