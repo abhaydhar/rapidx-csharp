@@ -1,0 +1,43 @@
+﻿@model ArtHandler.Model.AccountLockModelResponse
+@{
+    ViewBag.Title = "ART";
+    Layout = "~/Views/LayoutMaster/_Layout1.cshtml";
+}
+
+<script src="~/Scripts/ARTScript/bootstrap.js"></script>
+<script src="~/Scripts/ARTScript/custom.js"></script>
+
+<div class="col-sm-12 col-md-12 col-lg-12 page-title text-center">
+    <img src="~/Images/ArtImages/Tools.svg" alt="user-enroll">
+    <span>- Whoops! -</span>
+</div>
+
+<!-- content  section  start-->
+
+<div class="col-sm-12 col-md-12 col-lg-12 form-box">
+
+    <div class="form-container row">
+        <div class="col-xs-0 col-sm-4 col-md-4 col-lg-4 Padding-Nil">
+            <img src="~/Images/ArtImages/failure-icon.png" alt="left-image">
+        </div>
+
+        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 Padding-Nil">
+            <img src="~/Images/ArtImages/sorry-img.png">
+            <p class="margin-T15" style="text-transform:inherit">@Art.AccountLockMsg @Model.waitTime mins</p>
+            @*<button class="submit-btn margin-T30 clsGoHome" type="button" style="margin-left:0;">@Art.Home</button>*@
+            <a class="anchor-submit-btn margin-T30 clsGoHome" style="margin-left:0;">@Art.Home</a>
+        </div>
+    </div>
+</div>
+
+<!-- container section  end-->
+<script src="~/Scripts/ARTScript/layout.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var defaultLang = '@Html.Raw(ViewBag.DefaultLang)';
+        layout1.defaults.defaultLang = defaultLang;
+        layout1.init();
+    });
+
+</script>

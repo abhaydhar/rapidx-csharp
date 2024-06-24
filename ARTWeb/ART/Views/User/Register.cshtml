@@ -1,0 +1,165 @@
+﻿@model ArtHandler.Model.RegisterModel
+
+@{
+    ViewBag.Title = "ART :: " + Art.userenrollupdate_home;
+    Layout = "~/Views/LayoutMaster/_Layout2.cshtml";
+}
+
+<div class="col-sm-12 col-md-12 col-lg-12 page-title text-center">
+    <img src="~/Images/ArtImages/acc-unlock.svg" alt="forgot-password">
+    <span>@Art.userenrollupdate_home</span>
+</div>
+<form class="form-horizontal controls" role="form" id="register-form" method="post" action="/User/Register" autocomplete="off" style="display:none">
+    <!-- user id input section ends here-->
+    <!-- user questionnaire section starts here-->
+    @Html.AntiForgeryToken()
+    <div id="unlock-questionnaire">
+        <div class="col-sm-12 col-md-12 col-lg-12 form-box">
+            @if (ArtHandler.Model.Singleton.Instance.ClientSessionID.Is_User_Info_Required == "Y")
+            {
+                <ul class="progressbar">
+                    <li class="active">@Art.WizAuthentication</li>
+                    <li class="active">@Art.Register</li>
+                    <li class="current">@Art.Questionnaire</li>
+                </ul>
+            }
+            else
+            {
+                <ul class="progressbar progressbar-2">
+                    <li class="active">@Art.WizAuthentication</li>
+                    <li class="current">@Art.Questionnaire</li>
+                </ul>
+            }
+            <div class="form-container row Padding-T30">
+                <label id="lblErrMessage" class="error"></label>
+                @for (int i = 0; i < Model.questions.Count; i++)
+                {
+                    <div class="col-sm-12 col-md-12 col-lg-12 margin-T15">
+                        <div class="col-sm-12 col-md-12 col-lg-6">
+                            @*<p>@Art.question @i</p>*@
+                            <p>@Model.questions[i].categoryname </p>
+                            <select id="Que_@i" class="select-box" name="Que_@i">
+
+                                @foreach (var item in Model.questions[i].lstQuestions)
+                                {
+                                    if (item.isSelected)
+                                    {
+                                        <option value="@item.question_id" selected="selected">@item.question_text</option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@item.question_id">@item.question_text</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                        <div class="col-sm-12 col-md-12 col-lg-6 Answer-section">
+                            <p class="required">@Art.answer @(i + 1)</p>
+                            <input type="text" class="text-box htmltageliminate" name="txtQueAns_@i" id="txtQueAns_@i" data-text="@Art.EmptyAnswerwError">
+                            <label id="lblErrMessage_@i" for="txtQueAns_@i" class="error"></label>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="btn-section">
+            <input type="hidden" name="hdnTotalQuestions" value="@Model.TotalNumberOfQuestions" />
+            <input type="hidden" name="hdnTotalQuestionsUserAnswer" value="@Model.questions.Count" />
+            <button class="cancel-btn clsGoHome" type="button" id="btnCancel">@Art.Cancel</button>
+            <button class="submit-btn" type="button" id="btnRegister" data-target="#modal-confirm">@Art.Confirm</button>
+        </div>
+    </div>
+</form>
+
+
+
+<!-- footer section ends-->
+<!--Modal Success starts here-->
+<div class="modal fade" id="modal-success" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content width-size">
+            <div class="modal-header text-center ">
+                <img src="~/Images/ArtImages/success-msg-tick.png">
+            </div>
+
+            <div class="modal-body text-center">
+                <p class="modal-msg1">@Art.Great !!</p>
+                <p class="modal-msg2">@ViewBag.Message</p>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn-modal bg-green clsGoHome" data-dismiss="modal">ok</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--Modal Success ends here-->
+<!--Modal Fail starts here-->
+<div class="modal fade" id="modal-fail" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content width-size">
+            <div class="modal-header text-center ">
+                <img src="~/Images/ArtImages/failure-msg-cancel.png">
+            </div>
+
+            <div class="modal-body text-center">
+                <p class="modal-msg1">Oops!!</p>
+                <p class="modal-msg2">@ViewBag.Message</p>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn-modal bg-red clsGoHome" data-dismiss="modal">ok</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--Modal Fail ends here-->
+
+<div class="modal fade" id="modal-confirm" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content width-size">
+            <div class="modal-header text-center ">
+                <img src="~/Images/ArtImages/success-msg-tick.png">
+            </div>
+            @*<div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Please Confirm</h4>
+                </div>*@
+            <div class="modal-body">
+                <p class="text-center"><strong>@Art.ConfirmMessage</strong></p>
+                <div class="form-container row padding-T30" id="dvConfirmContent">
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <a class="cancel-btn" data-dismiss="modal">@Art.Cancel</a>
+                <a class="submit-btn" onclick="userRegister.fnSubmit()">@Art.Submit</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/ARTScript/UserRegister.js?v=@JSVersion.version"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        userRegister.defaults.defaultLang = '@Html.Raw(ViewBag.DefaultLang)';
+        userRegister.defaults.Message = '@ViewBag.Message';
+        userRegister.defaults.IsRegistered = '@ViewBag.IsRegistered';
+        userRegister.defaults.userQuestionCount = '@Model.TotalQuestionsToAnswer';
+        userRegister.defaults.totalQuestions = '@Model.TotalNumberOfQuestions';
+        userRegister.defaults.UniqueQuestionValidation = '@Art.UniqueQuestionValidation';
+        userRegister.defaults.EmptyAnswerwError = '@Art.EmptyAnswerwError';
+        userRegister.defaults.Question = '@Art.question';
+        userRegister.defaults.Answer = '@Art.answer';
+
+        userRegister.init();
+    });
+</script>

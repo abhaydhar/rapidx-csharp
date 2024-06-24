@@ -1,0 +1,462 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccountNotLocked" xml:space="preserve">
+    <value>आपका अकाउंट बंद नहीं है</value>
+  </data>
+  <data name="AccountRecoveryTool" xml:space="preserve">
+    <value>खाता पुनर्प्राप्ति उपकरण</value>
+  </data>
+  <data name="accountunlock_home" xml:space="preserve">
+    <value>खाता बंद</value>
+  </data>
+  <data name="AllQuestionAnswerMandateError" xml:space="preserve">
+    <value>सभी सवालों के जवाब होना चाहिए</value>
+  </data>
+  <data name="answer" xml:space="preserve">
+    <value>जवाब</value>
+  </data>
+  <data name="AnswerWrongErrMsg" xml:space="preserve">
+    <value>आपका जवाब गलत है, कृपया पुनः प्रयास करें</value>
+  </data>
+  <data name="ArtCaption" xml:space="preserve">
+    <value>मेटा डेटा यहाँ जाता है ..</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>रद्द कीजिये</value>
+  </data>
+  <data name="Change" xml:space="preserve">
+    <value>रद्द कीजिये</value>
+  </data>
+  <data name="ChangeOTPPassword" xml:space="preserve">
+    <value>बदलें / ओटीपी पासवर्ड</value>
+  </data>
+  <data name="changeotppassword_home" xml:space="preserve">
+    <value>बदलें / ओटीपी पासवर्ड</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>पासवर्ड बदलें</value>
+  </data>
+  <data name="ChangepasswordCaption" xml:space="preserve">
+    <value>आदेश में परिवर्तन करने के लिए नीचे दी गई जानकारी भरें</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>पासवर्ड की पुष्टि कीजिये</value>
+  </data>
+  <data name="Continue" xml:space="preserve">
+    <value>जारी रहें</value>
+  </data>
+  <data name="CurPassMin6Char" xml:space="preserve">
+    <value>वर्तमान पासवर्ड कम से कम 6 अक्षरों का हो सकते हैं ।</value>
+  </data>
+  <data name="CurrentPassword" xml:space="preserve">
+    <value>वर्तमान पासवर्ड </value>
+  </data>
+  <data name="DOB" xml:space="preserve">
+    <value>जन्म की तारीख</value>
+  </data>
+  <data name="EmptyAnswerwError" xml:space="preserve">
+    <value>कृप्या अपना जवाब दाखिल करें ।</value>
+  </data>
+  <data name="EnterCaptchaImageText" xml:space="preserve">
+    <value>कृप्या छवि में दिखाया गया पाठ दर्ज करें ।</value>
+  </data>
+  <data name="EnterCurrentPassword" xml:space="preserve">
+    <value>कृप्या वर्तमान पासवर्ड दर्ज करें ।</value>
+  </data>
+  <data name="EnterNewPassword" xml:space="preserve">
+    <value>कृप्या नया पासवर्ड दर्ज करें ।</value>
+  </data>
+  <data name="EnterOTP" xml:space="preserve">
+    <value>कृपया प्राप्त ओटीपी दर्ज करें ।</value>
+  </data>
+  <data name="EnterPassword" xml:space="preserve">
+    <value>कृप्या पास्वर्ड दर्ज करें ।</value>
+  </data>
+  <data name="EnterUserId" xml:space="preserve">
+    <value>कृप्या अपनी उपयोगकर्ता आईडी दर्ज करें ।</value>
+  </data>
+  <data name="EnterUserName" xml:space="preserve">
+    <value>कृप्या अपना उपयोगकर्ता नाम दर्ज करें</value>
+  </data>
+  <data name="ForgotPassword" xml:space="preserve">
+    <value>पासवर्ड भूल गए</value>
+  </data>
+  <data name="InvalidCaptcha" xml:space="preserve">
+    <value>अवैध कैप्चा</value>
+  </data>
+  <data name="InvalidOTP" xml:space="preserve">
+    <value>अवैध ओटीपी</value>
+  </data>
+  <data name="InvalidPassword" xml:space="preserve">
+    <value>अवैध पासवर्ड</value>
+  </data>
+  <data name="InvalidUser" xml:space="preserve">
+    <value>अवैध उपयोगकर्ता</value>
+  </data>
+  <data name="InvalidUserNamePassword" xml:space="preserve">
+    <value>अवैध उपयोगकर्ता नाम / पासवर्ड</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>लॉग इन करें</value>
+  </data>
+  <data name="Max13Char" xml:space="preserve">
+    <value>अधिकतम 13 अक्षर</value>
+  </data>
+  <data name="Min6Char" xml:space="preserve">
+    <value>कम से कम 6 अक्षर</value>
+  </data>
+  <data name="Min9Char" xml:space="preserve">
+    <value>न्यूनतम लंबाई 9 अक्षर</value>
+  </data>
+  <data name="MissingUserID" xml:space="preserve">
+    <value>लापता उपयोगकर्ता आईडी</value>
+  </data>
+  <data name="MobileNumber" xml:space="preserve">
+    <value>मोबाइल नंबर</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>नया पासवर्ड</value>
+  </data>
+  <data name="OldPassword" xml:space="preserve">
+    <value>पुराना पासवर्ड</value>
+  </data>
+  <data name="OTP" xml:space="preserve">
+    <value>ओटीपी</value>
+  </data>
+  <data name="OTPMin6Char" xml:space="preserve">
+    <value>ओटीपी कम से कम 6 अक्षर हो सकते हैं</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>पासवर्ड</value>
+  </data>
+  <data name="PasswordLength" xml:space="preserve">
+    <value>पासवर्ड लंबाई में 9-13 अक्षरों की होना चाहिए ।</value>
+  </data>
+  <data name="PasswordMismatch" xml:space="preserve">
+    <value>पासवर्ड बेमेल</value>
+  </data>
+  <data name="PasswordPolicy" xml:space="preserve">
+    <value>पासवर्ड में एक छोटा अक्षर, एक बड़ा अक्षर, एक प्रतीक और एक अंकीय वर्ण  होना चाहिए</value>
+  </data>
+  <data name="PasswordResetSuccess" xml:space="preserve">
+    <value>पासवर्ड सफलतापूर्वक रीसेट !!!</value>
+  </data>
+  <data name="PleaseEnterImageText" xml:space="preserve">
+    <value>कृपया छवि में दिखाया गया पाठ दर्ज</value>
+  </data>
+  <data name="question" xml:space="preserve">
+    <value>सवाल</value>
+  </data>
+  <data name="QuestionAnswerWrong" xml:space="preserve">
+    <value>आपके सवाल का जवाब गलत है</value>
+  </data>
+  <data name="ReenterPassword" xml:space="preserve">
+    <value>नया पासवर्ड फिर से दर्ज करें </value>
+  </data>
+  <data name="RegisterFailure" xml:space="preserve">
+    <value>रजिस्टर करने मे समस्या आ रही है, कुछ समय के बाद प्रयास करें </value>
+  </data>
+  <data name="RegisterSuccess" xml:space="preserve">
+    <value>उपयोगकर्ता सवाल जवाब सफलतापूर्वक सहेजा !!!</value>
+  </data>
+  <data name="resetpasswrod_home" xml:space="preserve">
+    <value>पासवर्ड रीसेट</value>
+  </data>
+  <data name="ResetYourPassword" xml:space="preserve">
+    <value>अपना पासवर्ड रीसेट करें</value>
+  </data>
+  <data name="SomethingWentWrong" xml:space="preserve">
+    <value>कुछ गलत हो गया ह, कुछ समय के बाद प्रयास करें</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>जमा करें</value>
+  </data>
+  <data name="UniqueQuestionValidation" xml:space="preserve">
+    <value>प्रश्न अद्वितीय होना चाहिए</value>
+  </data>
+  <data name="unlock" xml:space="preserve">
+    <value>अनलॉक</value>
+  </data>
+  <data name="UnlockAccount" xml:space="preserve">
+    <value>खाता अनलॉक</value>
+  </data>
+  <data name="UnlockFailure" xml:space="preserve">
+    <value>आपके खाते को अनलॉक करने मे समस्या आ रही है,  कुछ समय के बाद प्रयास करें</value>
+  </data>
+  <data name="UnlockSuccess" xml:space="preserve">
+    <value>आपका खाता सफलतापूर्वक खुल गया है</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>अद्यतन</value>
+  </data>
+  <data name="userenrollupdate_home" xml:space="preserve">
+    <value>उपयोगकर्ता पंजीकरण / अपडेट</value>
+  </data>
+  <data name="UserID" xml:space="preserve">
+    <value>उपयोगकर्ता आईडी</value>
+  </data>
+  <data name="UserIdNotExist" xml:space="preserve">
+    <value>उपयोगकर्ता आईडी मौजूद नहीं है</value>
+  </data>
+  <data name="UserLogin" xml:space="preserve">
+    <value>उपयोगकर्ता लॉग इन करें</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>उपयोगकर्ता नाम</value>
+  </data>
+  <data name="UserNameNotExist" xml:space="preserve">
+    <value>उपयोगकर्ता नाम मौजूद नहीं है</value>
+  </data>
+  <data name="UserNotRegistered" xml:space="preserve">
+    <value>पहले पंजीकृत करें, और फिर जारी रखें</value>
+  </data>
+  <data name="ValidateAnswer" xml:space="preserve">
+    <value>कृपया इस सवाल का जवाब दें</value>
+  </data>
+  <data name="SecurityQuestion" xml:space="preserve">
+    <value>सुरक्षा प्रश्न</value>
+  </data>
+  <data name="Authenticate" xml:space="preserve">
+    <value>प्रामाणीकरण</value>
+  </data>
+  <data name="AuthenticationType" xml:space="preserve">
+    <value>प्रमाणिकता का प्रकार</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>अगला</value>
+  </data>
+  <data name="OTP_Caption" xml:space="preserve">
+    <value>ओटीपी के लिए भेजा जाएगा</value>
+  </data>
+  <data name="SecQue_Caption" xml:space="preserve">
+    <value>आप पृष्ठ प्रश्नावली को नेविगेट जाएगा</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>भेजना</value>
+  </data>
+  <data name="AccountIsLocked" xml:space="preserve">
+    <value>आपका खाता लॉक है</value>
+  </data>
+  <data name="Confirmation" xml:space="preserve">
+    <value>पुष्टीकरण</value>
+  </data>
+  <data name="Questionnaire" xml:space="preserve">
+    <value>प्रशन</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>रजिस्टर</value>
+  </data>
+  <data name="Enter_OTP" xml:space="preserve">
+    <value>ओटीपी दर्ज</value>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>पिछला</value>
+  </data>
+  <data name="EnableOTP_Caption" xml:space="preserve">
+    <value>ओटीपी प्रमाणीकरण सक्षम करने के लिए चयन करें</value>
+  </data>
+  <data name="RegisterForOTP" xml:space="preserve">
+    <value>ओटीपी के लिए रजिस्टर</value>
+  </data>
+  <data name="ChangePasswordSuccess" xml:space="preserve">
+    <value>पासवर्ड सफलतापूर्वक बदला गया</value>
+  </data>
+  <data name="EnterDOB" xml:space="preserve">
+    <value>जन्म की तारीख दर्ज करें</value>
+  </data>
+  <data name="EnterMobileNumber" xml:space="preserve">
+    <value>मोबाइल नंबर डालें</value>
+  </data>
+  <data name="IncorrectDOBFormat" xml:space="preserve">
+    <value>जन्म प्रारूप की तिथि गलत है</value>
+  </data>
+  <data name="InvalidDOB" xml:space="preserve">
+    <value>अमान्य जन्म तिथि</value>
+  </data>
+  <data name="ArtCopyRights" xml:space="preserve">
+    <value>कॉपीराइट © 2016 हेक्सावेयर टेक्नोलॉजीज। सर्वाधिकार सुरक्षित।</value>
+  </data>
+  <data name="ClickHereToUnlock" xml:space="preserve">
+    <value>अनलॉक करने के लिए यहाँ क्लिक करें</value>
+  </data>
+  <data name="ErrorSendMsg" xml:space="preserve">
+    <value>संदेश भेजते समय त्रुटि</value>
+  </data>
+  <data name="InvalidMobileNumber" xml:space="preserve">
+    <value>अमान्य मोबाइल नंबर</value>
+  </data>
+  <data name="AccountLockMsg" xml:space="preserve">
+    <value>आप प्रयासों की अधिकतम संख्या से अधिक है, अपने खाते के लिए बंद कर दिया है</value>
+  </data>
+  <data name="Error404Msg" xml:space="preserve">
+    <value>पृष्ठ आप के लिए ले जाया गया है हो सकता है के लिए देख रहे हैं, इसका नाम बदल दिया या अस्थायी रूप से अनुपलब्ध</value>
+  </data>
+  <data name="ErrorMsg" xml:space="preserve">
+    <value>कुछ गलत हो गया, कुछ देर बाद पुन: प्रयास करें</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>घर</value>
+  </data>
+  <data name="EnterReceivedOtp" xml:space="preserve">
+    <value>प्राप्त ओटीपी दर्ज करें</value>
+  </data>
+  <data name="EnterYourPassword" xml:space="preserve">
+    <value>अपना पासवर्ड डालें</value>
+  </data>
+  <data name="EnterYourUserId" xml:space="preserve">
+    <value>अपना यूजर आईडी दर्ज</value>
+  </data>
+  <data name="EnterYourUserName" xml:space="preserve">
+    <value>अपने उपयोगकर्ता नाम दर्ज करें</value>
+  </data>
+  <data name="PlsConfirmNewPassword" xml:space="preserve">
+    <value>अपने नए पासवर्ड की पुष्टि करें</value>
+  </data>
+  <data name="PlsConfirmPassword" xml:space="preserve">
+    <value>कृपया अपने पासवर्ड की पुष्टि करें</value>
+  </data>
+  <data name="PlsEnterCaptcha" xml:space="preserve">
+    <value>कैप्चा नीचे दिखाया गया दर्ज करें</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>लोग आउट</value>
+  </data>
+  <data name="OTPDisableMsg" xml:space="preserve">
+    <value>इस सक्षम करने के लिए सक्षम करें "OTP के लिए रजिस्टर" विकल्प जबकि दाखिला लिया,</value>
+  </data>
+  <data name="MinMaxMsg" xml:space="preserve">
+    <value>मिन 9 - मैक्स 13 वर्ण</value>
+  </data>
+  <data name="OneNumericChar" xml:space="preserve">
+    <value>एक संख्यात्मक चरित्र</value>
+  </data>
+  <data name="OneSmallLetter" xml:space="preserve">
+    <value>एक छोटे से पत्र</value>
+  </data>
+  <data name="OneSpecialChar" xml:space="preserve">
+    <value>एक विशेष चरित्र</value>
+  </data>
+  <data name="OneUpperCaseLetter" xml:space="preserve">
+    <value>एक ऊपरी मामले पत्र</value>
+  </data>
+  <data name="PasswordInfo_information" xml:space="preserve">
+    <value>अद्यतन</value>
+  </data>
+</root>

@@ -1,0 +1,3 @@
+2017-11-03 03:57:50 => UserID : 34501 ; Message : UserEnroll :: Login ; TrStatus : Started ; SessionId : xs25unpty2uwfr4juawbfbvh ; 
+2017-11-03 03:57:52 => UserID : 34501 ; Message : UserEnroll :: Login ; TrStatus : User Name Not Exist ; SessionId : xs25unpty2uwfr4juawbfbvh ; 
+2017-11-03 04:02:06 => UserID : 34501 ; Message : UserEnroll :: Login ; TrStatus : Started ; SessionId : xs25unpty2uwfr4juawbfbvh ; 

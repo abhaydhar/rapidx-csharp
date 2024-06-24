@@ -1,0 +1,149 @@
+﻿@model ArtHandler.Model.UserInfoModel
+@{
+    ViewBag.Title = "ART :: " + "MobileNoChange";
+    Layout = "~/Views/LayoutMaster/_Layout2.cshtml";
+}
+
+<script src="~/Scripts/ARTScript/jquery.mask.js"></script>
+
+<div class="col-sm-12 col-md-12 col-lg-12 page-title text-center">
+    <img src="~/Images/ArtImages/user-enroll.svg" alt="user-enroll">
+    <span>MobileNoChange</span>
+</div>
+<form action="User/MobileNoChange" role="form" id="mobileNoChange-form" method="post">
+    @Html.AntiForgeryToken()
+
+    <div class="col-sm-12 col-md-12 col-lg-12 form-box">
+        <!-- progressbar -->
+        <div class="form-container row padding-T30">
+            @if (ArtHandler.Model.Singleton.Instance.ClientSessionID.Is_OTP_Enabled == "Y")
+            {
+                <div class="col-sm-12 col-md-12 col-lg-12 margin-T30">
+                    <div class="col-sm-12 col-md-12 col-lg-12 ">
+                        <div class="col-sm-12 col-md-12 col-lg-12 Padding-Nil">
+                            Existing Mobile Number:
+                            <label style="padding-left:5px;vertical-align:2px;font-weight:normal;">@Model.MobileNum </label>
+                        </div>
+
+
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+                        <label class="error" id="lblOTPExceedMsg"></label>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-12 Padding-Nil" id="contact-section1">
+                        <div class="col-sm-12 col-md-6 col-lg-6 Padding-Nil">
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <p>Select the country</p>
+                                <select id="drpCountryCode" class="select-box" name="drpCountryCode">
+                                    @foreach (var item in Model.lstContryCodes)
+                                    {
+                                        if (item.CountryCode == Model.CountryCode)
+                                        {
+                                            <option value="@(item.CountryCode+"_"+item.TelephoneCode+"_"+item.MobileNumberLength)" selected="selected">@item.Name</option>
+                                        }
+                                        else
+                                        {
+                                            <option value="@(item.CountryCode+"_"+item.TelephoneCode+"_"+item.MobileNumberLength)">@item.Name</option>
+                                        }
+                                    }
+                                </select>
+                            </div>
+
+                            <div class="col-sm-12 col-md-12 col-lg-12 margin-T15">
+                                <div class="col-xs-2" style="padding-left:0" id="sec-CountryCode">
+                                    <p>code</p>
+                                    <input type="text" class="text-box" id="txtCountryCode" disabled="disabled">
+                                </div>
+                                <div class="col-xs-10" style="padding-right:0">
+                                    <p>@Art.MobileNumber</p>
+                                    <input type="text" class="text-box" id="txtMobileNumber" value="@Model.MobileNum" data-text="@Art.MobileNumberToolTip">
+                                    <label id="lblMessageMobNum" class="error">@ViewBag.MessageMOB</label>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            @if (ArtHandler.Model.Singleton.Instance.ClientSessionID.Is_AD_Enabled == "Y")
+                            {
+                                @Html.CheckBox("mobile-num-private", @Model.IsMobileNumPrivate) <label style="margin-top: 10px; padding-left: 5px; vertical-align: 2px; font-weight: normal;">@Art.MobileNumberIsPrivate</label>
+                            }
+
+                            <div class="col-xs-12 alert-box row Padding-Nil Margin-Nil">
+                                <div class="pull-left">
+                                    @*<i class="fa fa-info-circle" aria-hidden="true"></i>*@
+                                    <img src="../Images/ArtImages/info.svg" alt="info-icon" class="info-circle">
+                                </div>
+                                <div class="">
+                                    <span>Mobile Number which you entered here is not shared / update to any public environment (Active Directory,etc...) , strictly used for this site alone.</span>
+                                </div>
+                            </div>
+
+                            <button class="form-btn" type="button" id="btnSendOTP" value="SendOTP" name="btnAction">@Art.SendOTP</button>
+                        </div>
+                        @if (Model.IsOTPSent == "1")
+                        {
+                            <div class="col-sm-6 col-md-6 col-lg-6 margin-T15" id="dv-OTP-section">
+                                <p>@Art.Enter_OTP</p>
+                                <input type="text" class="text-box" id="txtOtp" name="txtOtp" data-text="@Art.EnterReceivedOtp" maxlength="6">
+                                <button class="form-btn" type="button" id="btnValidateOTP" value="ValidateOTP" name="btnAction">@Art.ValidateOTP</button>
+                                <span id="pOtpWait" class="otp-section-msg"><span id="spnOtpReceiveMsg">@Art.OTPReceiveMsg</span> <strong><span id="seconds_timer"></span></strong> <a href="#" id="aResetPassResendOTP" style="display:none">@Art.Resend</a></span>
+                            </div>
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                @if (Model.IsValidOTP == "1")
+                                {
+                                    <label id="lblMessageOtp" class="successmsg">@Model.OTPValidateMsg</label>
+                                }
+                                else
+                                {
+                                    <label id="lblMessageOtp" class="error">@Model.OTPValidateMsg</label>
+                                }
+                            </div>
+                        }
+
+                    </div>
+                </div>
+            }
+        </div>
+
+    </div>
+
+
+    <div class="btn-section">
+        <button class="cancel-btn" type="button" id="btnUserRegisterCancel">@Art.Cancel</button>
+        <button class="submit-btn" type="button" id="btnSubmitUserInfo" value="Submit" name="btnAction">@Art.Change</button>
+    </div>
+    @Html.Hidden("btnAction")
+    @Html.Hidden("txtMobileNum", Model.MobileNum)
+    @Html.Hidden("countryCode")
+
+</form>
+    <!-- register section ends here-->
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/ARTScript/MobileNoChange.js?v=@JSVersion.version"></script>
+    <script src="~/Scripts/ARTScript/jquery.countdownTimer.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+        mobileNoChange.defaults.defaultLang = '@Html.Raw(ViewBag.DefaultLang)';
+        mobileNoChange.defaults.EnterMobileNumber = '@Art.EnterMobileNumber';
+        mobileNoChange.defaults.InvalidMobileNumber = '@Art.InvalidMobileNumber';
+        mobileNoChange.defaults.IsOTPSent = '@Model.IsOTPSent';
+        mobileNoChange.defaults.OTPResendMsg = '@Art.OTPResendMsg';
+        mobileNoChange.defaults.OTPMinMsg = '@Art.OTPMinMsg';
+        mobileNoChange.defaults.PlsEnterOtp = '@Art.PlsEnterOtp';
+        mobileNoChange.defaults.IsOtpAttemptExceed = '@ViewBag.IsOtpAttemptExceed';
+        mobileNoChange.defaults.MaxAttempt = '@ViewBag.MaxAttempt';
+        mobileNoChange.defaults.OTPMaxAttemptMsg = '@Art.OTPMaxAttemptMsg';
+        mobileNoChange.defaults.IsValidOTP = '@Model.IsValidOTP';
+        mobileNoChange.defaults.MobilNumberRegisterValidation = '@Art.MobilNumberRegisterValidation';
+        mobileNoChange.defaults.Is_OTP_Enabled = '@ArtHandler.Model.Singleton.Instance.ClientSessionID.Is_OTP_Enabled'       
+        mobileNoChange.defaults.OpenRegisterForOTP = '@ViewBag.OpenRegisterForOTP';
+
+        $('#seconds_timer').countdowntimer({
+            seconds: 60,
+            timeUp: mobileNoChange.timeisUp
+        });
+
+        mobileNoChange.init();
+    });
+
+    </script>

@@ -1,0 +1,229 @@
+﻿@using BotDetect.Web.Mvc;
+@model ArtHandler.Model.RegisterModel
+
+@{
+    ViewBag.Title = "ART :: " + "Quick Enrollment";
+    Layout = "~/Views/LayoutMaster/_Layout1.cshtml";
+}
+@*<style>
+    button {
+        margin-left: 0;
+        margin-top: 30px;
+        height: 35px;
+        padding: 7px 0 !important;
+    }
+</style>*@
+<div class="col-sm-12 col-md-12 col-lg-12 page-title text-center">
+    <img src="~/Images/ArtImages/user-enroll.svg" alt="forgot-password">
+    <span> Quick Enrollment</span>
+</div>
+<form class="form-horizontal controls" role="form" id="register-form" method="post" action="/User/QuickEnrollment" autocomplete="off" style="display:none">
+    <!-- user id input section ends here-->
+    <!-- user questionnaire section starts here-->
+    @Html.AntiForgeryToken()
+    <div id="unlock-questionnaire">
+        <div class="col-sm-12 col-md-12 col-lg-12 form-box">
+
+            <div class="form-container row Padding-T30">
+                @if (Model.IsLogin != true)
+                {
+                    <div class="col-sm-12 col-md-12 col-lg-12">
+
+                        <div class="col-sm-6 col-md-6 col-lg-6" id="div-enrollLogin">
+                            <p class="required">Enter the Key</p>
+                            <input type="text" class="text-box clsaplhaenrollkey" id="txtkey" maxlength="7" name="txtkey" style="text-transform:lowercase;" value="@ViewBag.userkey" data-text="Enter the Key" />
+
+                            <label id="lblMessage" for="txtkey" class="error">@ViewBag.Message</label>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <p>Captcha</p>
+                            @using (Html.BeginForm("CheckCaptcha", "Example", FormMethod.Post, new { @class = "column", role = "form" }))
+                            {
+                                <div class="actions col-lg-12 Padding-Nil" id="CaptchaSection">
+                                    @*@Html.TextBox("CaptchaCode")*@
+                                    <input id="CaptchaCode" class="text-box valid" name="CaptchaCode" type="text" value="" style="text-transform: uppercase;" data-text="Please enter the Captcha" maxlength="6">
+
+                                </div>
+
+                                <div id="CaptchaElement">
+                                    @{ MvcCaptcha exampleCaptcha = new MvcCaptcha("ExampleCaptcha");
+                                        exampleCaptcha.UserInputID = "CaptchaCode";
+                                        exampleCaptcha.CodeLength = 6;
+                                        exampleCaptcha.CodeStyle = BotDetect.CodeStyle.Alphanumeric;
+                                        exampleCaptcha.ImageStyle = BotDetect.ImageStyle.Chipped;
+                                        exampleCaptcha.CustomDarkColor = System.Drawing.Color.Black;
+                                        exampleCaptcha.ImageSize = new System.Drawing.Size(250, 50);
+                                        exampleCaptcha.SoundStyle = BotDetect.SoundStyle.HiveMind;
+                                    }
+                                    @Html.Captcha(exampleCaptcha)
+                                </div>
+
+                                <span class="status" id="status"></span>
+                                <script src="~/Scripts/ARTScript/BotDetectCaptcha.js"></script>
+
+                                        }
+                        </div>
+
+                    </div>
+
+                    @*<div class="col-sm-6 col-md-6 col-lg-6" id="div-enrollLogin">
+                            <p class="required">Enter the Key</p>
+                            <input type="text" class="text-box clsaplhaenrollkey" id="txtkey" maxlength="7" name="txtkey" style="text-transform:lowercase;" value="@ViewBag.userkey" data-text="Enter the Key" />
+
+                            <label id="lblMessage" for="txtkey" class="error">@ViewBag.Message</label>
+                        </div>*@
+                                        @*<div class="col-sm-12 col-md-12 col-lg-12">
+                                                <button class="submit-btn" type="button" id="btnLogin" value="Login" name="btnAction">Login</button>
+                                            </div>*@
+
+                                        
+
+                                        }
+                @for (int i = 0; i < Model.questions.Count; i++)
+                {
+                    if (@Model.IsLogin == true)
+                    {
+                        <div class="col-sm-12 col-md-12 col-lg-12 margin-T15" id="divQuickEnroll">
+                            <div class="col-sm-12 col-md-12 col-lg-6">
+                                @*<p>@Art.question @i</p>*@
+                                <p>@Model.questions[i].categoryname </p>
+                                <select id="Que_@i" class="select-box" name="Que_@i">
+
+                                    @foreach (var item in Model.questions[i].lstQuestions)
+                                    {
+                                        if (item.isSelected)
+                                        {
+                                            <option value="@item.question_id" selected="selected">@item.question_text</option>
+                                        }
+                                        else
+                                        {
+                                            <option value="@item.question_id">@item.question_text</option>
+                                        }
+                                    }
+                                </select>
+                            </div>
+
+                            <div class="col-sm-12 col-md-12 col-lg-6 Answer-section">
+                                <p class="required">@Art.answer @(i + 1)</p>
+                                <input type="text" class="text-box htmltageliminate" name="txtQueAns_@i" id="txtQueAns_@i" data-text="@Art.EmptyAnswerwError">
+                                <label id="lblErrMessage_@i" for="txtQueAns_@i" class="error"></label>
+                            </div>
+                        </div>
+                    }
+                }
+
+
+            </div>
+        </div>
+        @if (Model.IsLogin != true)
+        {
+            <div class="btn-section">
+                <button class="submit-btn Margin-Nil" type="button" id="btnLogin" value="Login" name="btnAction">Login</button>
+                @Html.Hidden("hbtnLogin")
+            </div>
+        }
+        @if (Model.IsLogin == true)
+        {
+            <div class="btn-section" id="div-EnrollQuestion">
+                <input type="hidden" name="hdnTotalQuestions" value="@Model.TotalNumberOfQuestions" />
+                <input type="hidden" name="hdnTotalQuestionsUserAnswer" value="@Model.questions.Count" />
+                <button class="cancel-btn clsGoHome" type="button" id="btnCancel" value="ARTCancel" name="btnAction">@Art.Cancel</button>
+                <button class="submit-btn" type="button" id="btnRegister" value="ARTRegister" name="btnAction">@Art.Confirm</button>
+            </div>
+        }
+    </div> 
+</form>
+
+
+
+<!-- footer section ends-->
+<!--Modal Success starts here-->
+<div class="modal fade" id="modal-success" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content width-size">
+            <div class="modal-header text-center ">
+                <img src="~/Images/ArtImages/success-msg-tick.png">
+            </div>
+
+            <div class="modal-body text-center">
+                <p class="modal-msg1">@Art.Great !!</p>
+                <p class="modal-msg2">@ViewBag.Message</p>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn-modal bg-green clsGoHome" data-dismiss="modal">ok</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--Modal Success ends here-->
+<!--Modal Fail starts here-->
+<div class="modal fade" id="modal-fail" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content width-size">
+            <div class="modal-header text-center ">
+                <img src="~/Images/ArtImages/failure-msg-cancel.png">
+            </div>
+
+            <div class="modal-body text-center">
+                <p class="modal-msg1">Oops!!</p>
+                <p class="modal-msg2">@ViewBag.Message</p>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn-modal bg-red clsGoHome" data-dismiss="modal">ok</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--Modal Fail ends here-->
+
+<div class="modal fade" id="modal-confirm" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content width-size">
+            <div class="modal-header text-center ">
+                <img src="~/Images/ArtImages/success-msg-tick.png">
+            </div>
+            @*<div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Please Confirm</h4>
+                </div>*@
+            <div class="modal-body">
+                <p class="text-center"><strong>@Art.ConfirmMessage</strong></p>
+                <div class="form-container row padding-T30" id="dvConfirmContent">
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <a class="cancel-btn" data-dismiss="modal">@Art.Cancel</a>
+                <a class="submit-btn" onclick="QuickEnrollment.fnSubmit()">@Art.Submit</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/ARTScript/QuickEnrollment.js?v=@JSVersion.version"></script>
+<script src="~/Scripts/jquery.validate.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        QuickEnrollment.defaults.defaultLang = '@Html.Raw(ViewBag.DefaultLang)';
+        QuickEnrollment.defaults.Message = '@ViewBag.Message';
+        QuickEnrollment.defaults.IsRegistered = '@ViewBag.IsRegistered';
+        QuickEnrollment.defaults.userQuestionCount = '@Model.TotalQuestionsToAnswer';
+        QuickEnrollment.defaults.totalQuestions = '@Model.TotalNumberOfQuestions';
+        QuickEnrollment.defaults.UniqueQuestionValidation = '@Art.UniqueQuestionValidation';
+        QuickEnrollment.defaults.EmptyAnswerwError = '@Art.EmptyAnswerwError';
+        QuickEnrollment.defaults.Question = '@Art.question';
+        QuickEnrollment.defaults.Answer = '@Art.answer';
+        QuickEnrollment.defaults.enterUserKey = "Enter the Key";
+        QuickEnrollment.init();
+    });
+</script>
