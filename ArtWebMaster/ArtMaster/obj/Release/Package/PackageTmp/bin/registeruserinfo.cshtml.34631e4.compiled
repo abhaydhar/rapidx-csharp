@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<preserve resultType="2" virtualPath="/Views/Reports/RegisterUserInfo.cshtml" hash="ffffffffd07b139f" filehash="ffffe688b8004580" flags="110000" assembly="App_Web_wqnyj30c" type="ASP._Page_Views_Reports_RegisterUserInfo_cshtml">
-    <filedeps>
-        <filedep name="/Views/Reports/RegisterUserInfo.cshtml" />
-    </filedeps>
-</preserve>
